@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!-- Default Layout Import-->
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/defaultLayout}"
+      th:with="type='skin'"
+>
+
+    <section class="container" layout:fragment="Content">
+
+        <script th:inline="javascript">
+            const restoreAnswers = [[${answers}]];
+        </script>
+
+        <!-- 컨텐츠 상단 서브 메뉴 -->
+        <div class="lnb_wrap">
+            <div class="inner">
+                <div class="lnb">
+                    <button type="button">일반소비자 피부진단</button>
+                    <ul>
+                        <li class="active"><a  >일반소비자 피부진단</a></li>
+                        <!-- <li><a class="last" th:href="@{/cosmetic/solution_02_1}">맞춤형화장품 조제관리사 고객 피부진단</a></li> -->
+                    </ul>
+                </div>
+
+                <ul class="depth_03">
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <!-- //컨텐츠 상단 서브 메뉴 -->
+
+        <!-- 타이틀 -->
+        <div class="title title_bg_03">
+            <div class="inner">
+                <div class="txtbox">
+                    <div class="tit_s ff_nm">My Skin Guide Platform</div>
+                    <h3 class="ff_nm">일반소비자 피부진단</h3>
+                    <p>소중한 내 피부, 타입을 체크해 보세요!<br />
+                        아름다운 피부 관리에 도움을 드리겠습니다.</p>
+                </div>
+            </div>
+        </div>
+        <!-- //타이틀 -->
+
+        <!-- 컨텐츠 -->
+        <div class="content kr" id="testTop">
+
+            <div class="inner">
+
+                <div class="language">
+                    <img width="20" height="20" th:src="@{/resources/static/images/common/ico_world.png}" alt="language" />
+                    <a class="active" href="?lang=KR">KR</a>
+                    <a href="?lang=CN">CN</a>
+                </div>
+
+                <ul class="skintest_step">
+                    <li><div><span class="step">STEP 1</span><span class="txt">피부 자가 진단</span></div></li>
+                    <li><div><span class="step">STEP 2</span><span class="txt">유/수분 밸런스</span></div></li>
+                    <li><div class="on"><span class="step">STEP 3</span><span class="txt">피부 트러블</span></div></li>
+                    <li><div><span class="step">STEP 4</span><span class="txt">색소침착</span></div></li>
+                    <li><div><span class="step">STEP 5</span><span class="txt">주름/탄력도</span></div></li>
+                    <li><div><span class="step">STEP 6</span><span class="txt">피부 노화</span></div></li>
+                    <li><div><span class="step">STEP 7</span><span class="txt">화장품 선호도</span></div></li>
+                    <li><div><span class="step">STEP 8</span><span class="txt">생활 패턴</span></div></li>
+                </ul>
+
+
+                <ul class="skintest_list">
+                    <li>
+                        <p><span class="num">1</span>화장품이나 비누, 물이 바뀌면 피부 트러블이 생기나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_3-1" class="Q09S1" value="0"><span>전혀아니다</span></label>
+                            <label><input type="radio" name="check_step_3-1" class="Q09S1" value="1"><span>아니다</span></label>
+                            <label><input type="radio" name="check_step_3-1" class="Q09S1" value="2"><span>보통이다</span></label>
+                            <label><input type="radio" name="check_step_3-1" class="Q09S1" value="3"><span>그렇다</span></label>
+                            <label><input type="radio" name="check_step_3-1" class="Q09S1" value="4"><span>항상 그렇다</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">2</span>날씨나 바람 등 외부환경에 따라 얼굴이 쉽게 붉어지나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_3-2" class="Q10S1" value="0"><span>전혀아니다</span></label>
+                            <label><input type="radio" name="check_step_3-2" class="Q10S1" value="1"><span>아니다</span></label>
+                            <label><input type="radio" name="check_step_3-2" class="Q10S1" value="2"><span>보통이다</span></label>
+                            <label><input type="radio" name="check_step_3-2" class="Q10S1" value="3"><span>그렇다</span></label>
+                            <label><input type="radio" name="check_step_3-2" class="Q10S1" value="4"><span>항상 그렇다</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">3</span>과거에 아토피 피부염, 습진 또는 접촉성 피부염(알레르기성 피부 발진)에 대한 경험이 있나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_3-3" class="Q11S1" value="0"><span>전혀아니다</span></label>
+                            <label><input type="radio" name="check_step_3-3" class="Q11S1" value="1"><span>아니다</span></label>
+                            <label><input type="radio" name="check_step_3-3" class="Q11S1" value="2"><span>보통이다</span></label>
+                            <label><input type="radio" name="check_step_3-3" class="Q11S1" value="3"><span>그렇다</span></label>
+                            <label><input type="radio" name="check_step_3-3" class="Q11S1" value="4"><span>항상 그렇다</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">4</span>잠을 못자거나 스트레스를 받으면 피부 상태가 변하나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_3-4" class="Q12S1" value="0"><span>전혀아니다</span></label>
+                            <label><input type="radio" name="check_step_3-4" class="Q12S1" value="1"><span>아니다</span></label>
+                            <label><input type="radio" name="check_step_3-4" class="Q12S1" value="2"><span>보통이다</span></label>
+                            <label><input type="radio" name="check_step_3-4" class="Q12S1" value="3"><span>그렇다</span></label>
+                            <label><input type="radio" name="check_step_3-4" class="Q12S1" value="4"><span>항상 그렇다</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">5</span>피부가 얇아서 실핏줄이 보이나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_3-5" class="Q13S1" value="0"><span>전혀아니다</span></label>
+                            <label><input type="radio" name="check_step_3-5" class="Q13S1" value="1"><span>아니다</span></label>
+                            <label><input type="radio" name="check_step_3-5" class="Q13S1" value="2"><span>보통이다</span></label>
+                            <label><input type="radio" name="check_step_3-5" class="Q13S1" value="3"><span>그렇다</span></label>
+                            <label><input type="radio" name="check_step_3-5" class="Q13S1" value="4"><span>항상 그렇다</span></label>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <div class="skintest_btns">
+                    <a class="btn_prev" th:href="@{/skin/solution_01_2}">이전</a>
+                    <a class="btn_next" th:href="@{/skin/solution_01_4}">다음</a>
+                </div>
+
+                
+            </div>
+
+        </div>
+
+        <div class="content cn" id="testTop">
+
+            <div class="inner">
+
+                <div class="language">
+                    <img width="20" height="20" th:src="@{/resources/static/images/common/ico_world.png}" alt="language" />
+                    <a href="?lang=KR">KR</a>
+                    <a class="active" href="?lang=CN">CN</a>
+                </div>
+
+                <ul class="skintest_step">
+                    <li><div><span class="step">STEP 1</span><span class="txt">皮肤自己检测</span></div></li>
+                    <li><div><span class="step">STEP 2</span><span class="txt">油水分平衡</span></div></li>
+                    <li><div class="on"><span class="step">STEP 3</span><span class="txt">过敏，皮肤病</span></div></li>
+                    <li><div><span class="step">STEP 4</span><span class="txt">色素沉淀</span></div></li>
+                    <li><div><span class="step">STEP 5</span><span class="txt">皱纹/弹性</span></div></li>
+                    <li><div><span class="step">STEP 6</span><span class="txt">皮肤老化</span></div></li>
+                    <li><div><span class="step">STEP 7</span><span class="txt">化妆品偏爱度</span></div></li>
+                    <li><div><span class="step">STEP 8</span><span class="txt">生活方式</span></div></li>
+                </ul>
+
+
+                <ul class="skintest_list">
+                    <li>
+                        <p><span class="num">1</span>化妆品或香皂,换水出痘痘吗 ？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_3-1" class="Q09S1" value="0"><span>从不</span></label>
+                            <label><input type="radio" name="check_step_3-1" class="Q09S1" value="1"><span>不是</span></label>
+                            <label><input type="radio" name="check_step_3-1" class="Q09S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_3-1" class="Q09S1" value="3"><span>是</span></label>
+                            <label><input type="radio" name="check_step_3-1" class="Q09S1" value="4"><span>总是</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">2</span>天气或风等跟着外部环境容易红斑吗 ？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_3-2" class="Q10S1" value="0"><span>从不</span></label>
+                            <label><input type="radio" name="check_step_3-2" class="Q10S1" value="1"><span>不是</span></label>
+                            <label><input type="radio" name="check_step_3-2" class="Q10S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_3-2" class="Q10S1" value="3"><span>是</span></label>
+                            <label><input type="radio" name="check_step_3-2" class="Q10S1" value="4"><span>总是</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">3</span>目前有遗传过敏性皮炎湿疹或接触性皮炎（过敏性皮肤出疹子）经验吗？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_3-3" class="Q11S1" value="0"><span>从不</span></label>
+                            <label><input type="radio" name="check_step_3-3" class="Q11S1" value="1"><span>不是</span></label>
+                            <label><input type="radio" name="check_step_3-3" class="Q11S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_3-3" class="Q11S1" value="3"><span>是</span></label>
+                            <label><input type="radio" name="check_step_3-3" class="Q11S1" value="4"><span>总是</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">4</span>睡不好，受到压力时你的皮肤有变化吗？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_3-4" class="Q12S1" value="0"><span>从不</span></label>
+                            <label><input type="radio" name="check_step_3-4" class="Q12S1" value="1"><span>不是</span></label>
+                            <label><input type="radio" name="check_step_3-4" class="Q12S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_3-4" class="Q12S1" value="3"><span>是</span></label>
+                            <label><input type="radio" name="check_step_3-4" class="Q12S1" value="4"><span>总是</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">5</span>因皮肤薄看到毛细血管吗？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_3-5" class="Q13S1" value="0"><span>从不</span></label>
+                            <label><input type="radio" name="check_step_3-5" class="Q13S1" value="1"><span>不是</span></label>
+                            <label><input type="radio" name="check_step_3-5" class="Q13S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_3-5" class="Q13S1" value="3"><span>是</span></label>
+                            <label><input type="radio" name="check_step_3-5" class="Q13S1" value="4"><span>总是</span></label>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <div class="skintest_btns">
+                    <a class="btn_prev" th:href="@{/skin/solution_01_2}">以前</a>
+                    <a class="btn_next" th:href="@{/skin/solution_01_4}">下次</a>
+                </div>
+
+                
+            </div>
+
+        </div>
+        <!-- //컨텐츠 -->
+
+    </section>
+    <!-- //Container -->
+
+</body>
+</html>

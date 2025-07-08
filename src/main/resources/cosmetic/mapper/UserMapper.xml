@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cosmetic.persistence.UserMapper">
+
+    <select id="selectUsers" resultType="cosmetic.domain.User">
+    SELECT * FROM User
+    </select>
+	
+	<select id="selectUserById" parameterType="int" resultType="cosmetic.domain.User">
+		SELECT * FROM User WHERE ID= #{id}	
+	</select>
+	
+    <select id="selectUserByUsername" resultType="cosmetic.domain.User">
+        SELECT * FROM User WHERE USERNAME=#{username}
+    </select>
+
+    <select id="selectUsersByRoleType" resultType="cosmetic.domain.User">
+        SELECT * FROM `User` u
+        WHERE RoleType = #{type};
+    </select>
+
+    <select id="selectUserByEmail" resultType="cosmetic.domain.User">
+        SELECT * FROM User WHERE EMAIL=#{email}
+    </select>
+
+    <select id="selectUserByEmailAndName" resultType="cosmetic.domain.User">
+        SELECT * FROM User WHERE USERNAME=#{username} and EMAIL=#{email}
+    </select>
+    
+    <insert id="insertUser" parameterType="cosmetic.domain.User">
+       INSERT INTO User (EMAIL, USERNAME, PASSWORD, GENDER, BIRTHDAY,
+             RESIDENCE, ZIPCODE, ADDRESS, DETAILADDRESS, RECOMMANDUSERID,
+             COMPANYNAME, PHONENUMBER, CERTIFICATE, CERTIFICATENUMBER, DECLARATION,
+             BizRegNumber,BizPhoneNumber,
+             RegRoleType,
+             EMAILAGREE, MESSAGEAGREE, ROLETYPE, CREATEUSER, CREATEDATE,
+             UPDATEUSER, UPDATEDATE, IMAGE)
+       VALUES (#{email}, #{username}, #{password}, #{gender}, #{birthDay},
+             #{residence}, #{zipcode}, #{address}, #{detailAddress}, #{recommandUserId},
+             #{companyName}, #{phoneNumber}, #{certificate}, #{certificateNumber}, #{declaration},
+             #{bizRegNumber}, #{bizPhoneNumber},
+             #{regRoleType},
+             #{emailAgree}, #{messageAgree}, #{roleType}, #{createUser}, now(),
+             null, null, #{image, jdbcType=BLOB})  
+    </insert>
+
+    
+    <update id="updateUser" parameterType="cosmetic.domain.form.UserForm">
+    	UPDATE User SET
+    					USERNAME = #{username},
+    					PASSWORD = #{password},
+    					GENDER = #{gender},
+    					BIRTHDAY = #{birthDay},
+    					RESIDENCE = #{residence},
+                        ZIPCODE = #{zipcode},
+                        ADDRESS = #{address},
+                        DETAILADDRESS = #{detailAddress},
+                        RECOMMANDUSERID = #{recommandUserId},
+    					COMPANYNAME = #{companyName},
+    					PHONENUMBER = #{phoneNumber},
+                        BizRegNumber = #{bizRegNumber},
+                        BizPhoneNumber = #{bizPhoneNumber},
+    					CERTIFICATE = #{certificate},
+                        CERTIFICATENUMBER = #{certificateNumber},
+    					DECLARATION = #{declaration},
+    					EMAILAGREE = #{emailAgree},
+    					MESSAGEAGREE = #{messageAgree}, 
+    					UPDATEDATE = now(),
+    					UPDATEUSER = #{email}
+    		WHERE EMAIL = #{email}
+    					
+    					
+    </update>
+
+    <update id="updateUserInfo" parameterType="cosmetic.domain.form.UserForm">
+        UPDATE User SET
+                        EMAIL = #{email},
+                        USERNAME = #{username},
+                        GENDER = #{gender},
+                        BIRTHDAY = #{birthDay},
+                        RESIDENCE = #{residence},
+                        ZIPCODE = #{zipcode},
+                        ADDRESS = #{address},
+                        DETAILADDRESS = #{detailAddress},
+                        RECOMMANDUSERID = #{recommandUserId},
+                        COMPANYNAME = #{companyName},
+                        PHONENUMBER = #{phoneNumber},
+                        BizRegNumber = #{bizRegNumber},
+                        BizPhoneNumber = #{bizPhoneNumber},
+                        CERTIFICATE = #{certificate},
+                        CERTIFICATENUMBER = #{certificateNumber},
+                        DECLARATION = #{declaration},
+                        EMAILAGREE = #{emailagree},
+                        MESSAGEAGREE = #{messageagree},
+                        UPDATEDATE = now(),
+                        UPDATEUSER = #{email}
+        WHERE EMAIL = #{email}
+    </update>
+    
+    <update id="updatePwd" parameterType="cosmetic.domain.form.UpdateForm">
+    	UPDATE User SET Password = #{password} WHERE ID = #{id} 
+    </update>
+
+    <update id="updatePasswordByEmail" parameterType="String">
+        UPDATE User SET Password = #{password} WHERE EMAIL = #{email}
+    </update>
+
+    <update id="updatePwdRetryCnt" parameterType="String">
+    	UPDATE User SET PWDRETRYCNT= PWDRETRYCNT + 1 WHERE EMAIL = #{email}
+    </update>
+
+    <update id="deleteUserByEmail" parameterType="String">
+        DELETE FROM User WHERE EMAIL = #{email}
+    </update>
+
+    <insert id="insertUserFile" parameterType="cosmetic.domain.UserFile" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO UserFile (UserId, Type, FileName, StoreFileName, FileSize, FileExtension, BaseUrl, FileUrl, FilePath, RefId, CUser, CDate)
+        VALUES (#{userId}, #{type}, #{fileName}, #{storeFileName}, #{fileSize}, #{fileExtension}, #{baseUrl}, #{fileUrl}, #{filePath}, #{refId}, #{userCreated}, #{dateTimeCreated})
+    </insert>
+
+    <select id="selectUserFileByUserIdnType" parameterType="cosmetic.domain.UserFile" resultType="cosmetic.domain.UserFile">
+        SELECT * FROM UserFile a
+        WHERE 1=1
+          AND a.id = (
+            SELECT MAX(id) from UserFile b
+            WHERE b.UserId = #{userId}
+              AND b.Type = #{type}
+        <if test="refId != null and refId != ''" >
+              AND b.RefId = #{refId}
+        </if>
+        )
+    </select>
+
+    <select id="selectUserFileById" parameterType="cosmetic.domain.UserFile" resultType="cosmetic.domain.UserFile">
+        SELECT * FROM UserFile a
+        WHERE 1=1
+          AND a.id = #{id}
+    </select>
+
+</mapper>

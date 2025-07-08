@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+/* Main
+----------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.main_visual {min-height: 640px;}
+.main_visual ul li {position: relative;}
+.main_visual .bg {width: 100%;min-height: 640px;height: 1280px;background-color: #e2dbd8;background-repeat: no-repeat;background-position: 50% 0;background-size: cover;}
+.main_visual .bg.bg1 {background-image: url(../../images/mobile/main/main_visual01.jpg);}
+.main_visual .bg.bg2 {background-image: url(../../images/mobile/main/main_visual02.jpg);}
+.main_visual ul li .inner {position: absolute;top: 5px;left: 0;display: flex;justify-content: center;align-items: flex-end;width: 100%;height: 100%;box-sizing: border-box;}
+.main_visual .txtbox {position: absolute;top: 30px;margin: 0 auto;max-width: 300px;text-align: center;box-sizing: border-box;}
+.main_visual .txtbox > span {display: block;}
+.main_visual .txtbox .txt1 {line-height: 1.2em;font-size: 29px;font-weight: 700;color: #fff;letter-spacing:-1px}
+.main_visual .txtbox .txt2 {margin-top: 14px;line-height: 1.2em;font-size: 19px;font-weight: 500;color: #634e42;}
+.main_visual .swiper-pagination {bottom: 65px;}
+.main_visual .swiper-pagination .swiper-pagination-bullet {margin: 0 8px;width: 14px;height: 14px;border: 1px solid #fff;background-color: transparent;opacity: 1;box-sizing: border-box;}
+.main_visual .swiper-pagination .swiper-pagination-bullet-active {border: 0;background-color: #fff;}
+.main .txtst {position: relative;}
+.main .txtst h3 {margin-bottom: 27px;font-size: 38px;font-weight: 700;color: #634e42;letter-spacing: -1px;}
+.main .txtst h3.txt_s {line-height: 1.17em;font-size: 35px;}
+.main .txtst .txt1 {margin-bottom: 15px;font-size: 24px;font-weight: 500;color: #634e42;letter-spacing: -1px;}
+.main .txtst .txt2 {margin-bottom: 63px;max-width: 215px;line-height: 1.7em;font-size: 15px;font-weight: 400;color: #555;letter-spacing: -1px;}
+.main .txtst .btn_round {position: absolute;bottom: 6px;right: 33px;display: block;padding-top: 19px;width: 65px;height: 65px;line-height: 1em;font-size: 17px;font-weight: 700;color: #fff;background-color: #634e42;border-radius: 50%;box-sizing: border-box;text-align: center;}
+.main .txtst .btn_round .arrow {position: absolute;left: 19px;bottom: 27px;display: block;width: 78px;height: 2px;background-color: #d5cfcc;}
+.main .txtst .btn_round .arrow:after {position: absolute;right: -5px;bottom: 10px;content: "";display: block;width: 30px;height: 2px;background-color: #d5cfcc;transform: rotate(45deg);}
+.main .imgst img {display: block;width: 100%;}
+.main_sq {padding: 60px 0 132px;}
+.main_bm {position: relative;background-color: #e8e5e4;}
+.main_bm .bg {width: 100%;min-height: 611px;height: 1222px;background: url(../../images/mobile/main/img02.jpg) no-repeat 50% 75% / cover;}
+.main_bm .txtbox {position: absolute;top: 48px;left: 0;}
+.main_bm .txtbox h3 {margin-bottom: 10px;font-size: 32px;font-weight: 700;color: #634e42;letter-spacing: -1px;}
+.main_bm .txtbox .txt1 {margin-bottom: 13px;line-height: 1.58em;font-size: 16px;font-weight: 500;color: #634e42;}
+.main_bm .txtbox .btn {display: block;width: 88px;height: 30px;line-height: 28px;font-size: 19px;font-weight: 700;color: #634e42;text-align: center;border: 1px solid #634e42;border-radius: 30px;}
+.main_sl {padding: 125px 0 130px;}
+.main_sl .btm {padding-top: 125px;}
+.main_notice {margin: 0 0 100px;}
+.main_notice .banner {overflow: hidden;width: 100%;box-sizing: border-box;}
+.main_notice .banner > ul {padding: 0;}
+.main_notice .banner > ul > li {position: relative;height: 100%;box-sizing: border-box;}
+.main_notice .banner .bg {width: 100%;min-height: 610px;height: 1220px;background-color: #e2dbd8;background-repeat: no-repeat;background-position: 50% 50%;background-size: cover;}
+.main_notice .banner .bg.bg1 {background-image: url(../../images/mobile/main/img05_1.jpg);}
+.main_notice .banner .txtbox {position: absolute;top: 0;left: 0;display: block;padding-top: 55px;max-width: 335px;width: 100%;height: 100%;box-sizing: border-box;}
+.mobile_menu .m_gnb .dep_02 {padding: 12px 0;background-color: #f8f5ee;}
+.main_notice .banner .txtbox .txt1 {position: relative;margin-bottom: 12px;padding-bottom: 15px;line-height: 1.48em;font-size: 27px;font-weight: 500;color: #634e42;}
+.main_notice .banner .txtbox .txt1:after {position: absolute;bottom: 0;left: 0;content: "";display: block;width: 48px;height: 2px;background-color: #634e42;}
+.main_notice .banner .txtbox .txt2 {line-height: 1.7em;font-size: 16px;font-weight: 500;color: #7e6e64;}
+.mobile_menu .m_gnb .dep_03 > li > a {padding: 10px 40px;line-height: 19px;font-size: 16px;color: #333;}
+.main_notice .banner .swiper-pagination {left: auto;right: 34px;top: 234px;width: auto;text-align: right;box-sizing: border-box;}
+.main_notice .banner .swiper-pagination .swiper-pagination-bullet {margin: 0 0 0 15px;width: 13px;height: 13px;border: 1px solid #634e42;background-color: transparent;opacity: 1;box-sizing: border-box;}
+.main_notice .banner .swiper-pagination .swiper-pagination-bullet-active {border: 0;background-color: #634e42;}
+.main .mr_120 {margin-right: -120px;}
+.main_notice .noti_list {position: relative;padding-top: 110px;}
+.main_notice .noti_list h3 {margin-bottom: 40px;font-size: 35px;font-weight: 700;color: #634e42;}
+.main_notice .noti_list h3.bar:after {width: 40px;}
+.main_notice .noti_list .btn_more {position: absolute;top: 118px;right: 0;padding: 8px 0 8px 23px;display: inline-block;min-width: 0;line-height: 20px;font-size: 17px;color: #634e42;border: 0;background: none;}
+.main_notice .noti_list .btn_more:before, .main_notice .noti_list .btn_more:after {position: absolute;;content: "";display: block;background-color: #634e42;}
+.main_notice .noti_list .btn_more:before {top: 17px;left: 0;width: 14px;height: 2px;}
+.main_notice .noti_list .btn_more:after {top: 11px;left: 6px;width: 2px;height: 14px;}
+.main_notice .noti_list li {overflow: hidden;margin-bottom: 15px;}
+.main_notice .noti_list li a {overflow: hidden;display: block;width: 100%;line-height: 1.5em;font-size: 16px;color: #555;text-overflow: ellipsis;white-space: nowrap;}
+.main_notice .noti_list li .date {display: block;font-size: 16px;color: #aba8a7;}
+
+@media screen and (max-width: 749px) {
+    .main_visual .bg {height: 640px;}
+    .main_bm .bg {height: 611px;}
+    .main_notice .banner .bg {height: 610px;}
+}

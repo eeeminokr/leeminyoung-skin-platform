@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!-- Default Layout Import-->
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/defaultLayout}"
+      th:with="type='skin'"
+>
+<body class="page_solution">
+
+
+    <section class="container" layout:fragment="Content">
+
+        <script th:inline="javascript">
+            const restoreAnswers = [[${answers}]];
+        </script>
+
+        <!-- 컨텐츠 상단 서브 메뉴 -->
+        <div class="lnb_wrap">
+            <div class="inner">
+                <div class="lnb">
+                    <button type="button">일반소비자 피부진단</button>
+                    <ul>
+                        <li class="active"><a th:href="@{/cosmetic/solution_01_1}">일반소비자 피부진단</a></li>
+                        <!-- <li><a class="last" th:href="@{/cosmetic/solution_02_1}">맞춤형화장품 조제관리사 고객 피부진단</a></li> -->
+                    </ul>
+                </div>
+
+                <ul class="depth_03">
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <!-- //컨텐츠 상단 서브 메뉴 -->
+
+        <!-- 타이틀 -->
+        <div class="title title_bg_03">
+            <div class="inner">
+                <div class="txtbox">
+                    <div class="tit_s ff_nm">My Skin Guide Platform</div>
+                    <h3 class="ff_nm">일반소비자 피부진단</h3>
+                    <p>소중한 내 피부, 타입을 체크해 보세요!<br />
+                        아름다운 피부 관리에 도움을 드리겠습니다.</p>
+                </div>
+            </div>
+        </div>
+        <!-- //타이틀 -->
+
+        <!-- 컨텐츠 -->
+        <div class="content kr" id="testTop">
+
+            <div class="inner">
+                
+                <div class="language">
+                    <img width="20" height="20" th:src="@{/resources/static/images/common/ico_world.png}" alt="language" />
+                    <a class="active" href="?lang=KR">KR</a>
+                    <a href="?lang=CN">CN</a>
+                </div>
+
+                <ul class="skintest_step">
+                    <li><div><span class="step">STEP 1</span><span class="txt">피부 자가 진단</span></div></li>
+                    <li><div><span class="step">STEP 2</span><span class="txt">유/수분 밸런스</span></div></li>
+                    <li><div><span class="step">STEP 3</span><span class="txt">피부 트러블</span></div></li>
+                    <li><div><span class="step">STEP 4</span><span class="txt">색소침착</span></div></li>
+                    <li><div><span class="step">STEP 5</span><span class="txt">주름/탄력도</span></div></li>
+                    <li><div class="on"><span class="step">STEP 6</span><span class="txt">피부 노화</span></div></li>
+                    <li><div><span class="step">STEP 7</span><span class="txt">화장품 선호도</span></div></li>
+                    <li><div><span class="step">STEP 8</span><span class="txt">생활 패턴</span></div></li>
+                </ul>
+
+
+                <ul class="skintest_list">
+                    <!-- Q24S1	Q25S1	Q26S1	Q27S1	Q28S1 -->
+                    <li>
+                        <p><span class="num">1</span>평소 다른 사람들이 본래 나이보다 많게 보나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_6-1" class="Q24S1" value="0"><span>전혀아니다</span></label>
+                            <label><input type="radio" name="check_step_6-1" class="Q24S1" value="1"><span>아니다</span></label>
+                            <label><input type="radio" name="check_step_6-1" class="Q24S1" value="2"><span>보통이다</span></label>
+                            <label><input type="radio" name="check_step_6-1" class="Q24S1" value="3"><span>그렇다</span></label>
+                            <label><input type="radio" name="check_step_6-1" class="Q24S1" value="4"><span>항상 그렇다</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">2</span>본래 나이에 비해 어떻게 보이나요?</p>
+                        <div class="check_wrap">
+                            <label><input type="radio" name="check_step_6-2" class="Q25S1" value="0"><span>내 나이보다 4년 이상 더 어려보인다.</span></label>
+                            <label><input type="radio" name="check_step_6-2" class="Q25S1" value="1"><span>내 나이보다 1~3년 정도 더 어려보인다.</span></label>
+                            <label><input type="radio" name="check_step_6-2" class="Q25S1" value="2"><span>내 나이 그대로 보인다.</span></label>
+                            <label><input type="radio" name="check_step_6-2" class="Q25S1" value="3"><span>내 나이보다 1~3년 정도 나이들어 보인다.</span></label>
+                            <label><input type="radio" name="check_step_6-2" class="Q25S1" value="4"><span>내 나이보다 4년 이상 나이들어 보인다.</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">3</span>본인 모공의 크기 및 모양은 어떤가요?</p>
+                        <div class="check_wrap">
+                            <label><input type="radio" name="check_step_6-3" class="Q26S1" value="0"><span>모공이 거의 눈에 보이지 않거나 작고 규칙적이다.</span></label>
+                            <label><input type="radio" name="check_step_6-3" class="Q26S1" value="1"><span>큰 모공이 보이기 시작하고 상당수 길게 늘어져있다.</span></label>
+                            <label><input type="radio" name="check_step_6-3" class="Q26S1" value="2"><span>대부분 모공이 크고 세로로 길게 늘어져 있다.</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">4</span>얼굴 처짐이 있나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_6-4" class="Q27S1" value="0"><span>전혀아니다</span></label>
+                            <label><input type="radio" name="check_step_6-4" class="Q27S1" value="1"><span>아니다</span></label>
+                            <label><input type="radio" name="check_step_6-4" class="Q27S1" value="2"><span>보통이다</span></label>
+                            <label><input type="radio" name="check_step_6-4" class="Q27S1" value="3"><span>그렇다</span></label>
+                            <label><input type="radio" name="check_step_6-4" class="Q27S1" value="4"><span>항상 그렇다</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">5</span>무표정 상태에서 얼굴 볼륨이 꺼진 곳이 있나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_6-5" class="Q28S1" value="0"><span>전혀아니다</span></label>
+                            <label><input type="radio" name="check_step_6-5" class="Q28S1" value="1"><span>아니다</span></label>
+                            <label><input type="radio" name="check_step_6-5" class="Q28S1" value="2"><span>보통이다</span></label>
+                            <label><input type="radio" name="check_step_6-5" class="Q28S1" value="3"><span>그렇다</span></label>
+                            <label><input type="radio" name="check_step_6-5" class="Q28S1" value="4"><span>항상 그렇다</span></label>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <div class="skintest_btns">
+                    <a class="btn_prev" th:href="@{/skin/solution_01_5}">이전</a>
+                    <a class="btn_next" th:href="@{/skin/solution_01_7}">다음</a>
+                </div>
+
+                
+            </div>
+
+        </div>
+
+        <div class="content cn" id="testTop">
+
+            <div class="inner">
+
+                <div class="language">
+                    <img width="20" height="20" th:src="@{/resources/static/images/common/ico_world.png}" alt="language" />
+                    <a href="?lang=KR">KR</a>
+                    <a class="active" href="?lang=CN">CN</a>
+                </div>
+
+                <ul class="skintest_step">
+                    <li><div><span class="step">STEP 1</span><span class="txt">皮肤自己检测</span></div></li>
+                    <li><div><span class="step">STEP 2</span><span class="txt">油水分平衡</span></div></li>
+                    <li><div><span class="step">STEP 3</span><span class="txt">过敏，皮肤病</span></div></li>
+                    <li><div><span class="step">STEP 4</span><span class="txt">色素沉淀</span></div></li>
+                    <li><div><span class="step">STEP 5</span><span class="txt">皱纹/弹性</span></div></li>
+                    <li><div class="on"><span class="step">STEP 6</span><span class="txt">皮肤老化</span></div></li>
+                    <li><div><span class="step">STEP 7</span><span class="txt">化妆品偏爱度</span></div></li>
+                    <li><div><span class="step">STEP 8</span><span class="txt">生活方式</span></div></li>
+                </ul>
+
+
+                <ul class="skintest_list">
+                    <li>
+                        <p><span class="num">1</span>平时别人看你，比实际年龄大吗？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_6-1" class="Q24S1" value="0"><span>从不</span></label>
+                            <label><input type="radio" name="check_step_6-1" class="Q24S1" value="1"><span>不是</span></label>
+                            <label><input type="radio" name="check_step_6-1" class="Q24S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_6-1" class="Q24S1" value="3"><span>是</span></label>
+                            <label><input type="radio" name="check_step_6-1" class="Q24S1" value="4"><span>总是</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">2</span>觉得你比实际年龄年轻吗？</p>
+                        <div class="check_wrap">
+                            <label><input type="radio" name="check_step_6-2" class="Q25S1" value="0"><span>看起来比我年龄4岁以上更小.</span></label>
+                            <label><input type="radio" name="check_step_6-2" class="Q25S1" value="1"><span>看起来比我年龄1岁~3岁左右更小.</span></label>
+                            <label><input type="radio" name="check_step_6-2" class="Q25S1" value="2"><span>本来的年龄</span></label>
+                            <label><input type="radio" name="check_step_6-2" class="Q25S1" value="3"><span>看起来比我年龄1岁~3岁左右老</span></label>
+                            <label><input type="radio" name="check_step_6-2" class="Q25S1" value="4"><span>看起来比我年龄4岁以上老.</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">3</span>你觉得自己毛孔大小，样子怎么样？</p>
+                        <div class="check_wrap">
+                            <label><input type="radio" name="check_step_6-3" class="Q26S1" value="0"><span>毛孔几乎看不见，小，规则</span></label>
+                            <label><input type="radio" name="check_step_6-3" class="Q26S1" value="1"><span>开始看见毛孔，很多长垂下</span></label>
+                            <label><input type="radio" name="check_step_6-3" class="Q26S1" value="2"><span>大部分毛孔粗大，往纵下长垂下</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">4</span>您的脸上有下垂吗?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_6-4" class="Q27S1" value="0"><span>从不</span></label>
+                            <label><input type="radio" name="check_step_6-4" class="Q27S1" value="1"><span>不是</span></label>
+                            <label><input type="radio" name="check_step_6-4" class="Q27S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_6-4" class="Q27S1" value="3"><span>是</span></label>
+                            <label><input type="radio" name="check_step_6-4" class="Q27S1" value="4"><span>总是</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">5</span>无表情状态上有脸凹陷吗？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_6-5" class="Q28S1" value="0"><span>从不</span></label>
+                            <label><input type="radio" name="check_step_6-5" class="Q28S1" value="1"><span>不是</span></label>
+                            <label><input type="radio" name="check_step_6-5" class="Q28S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_6-5" class="Q28S1" value="3"><span>是</span></label>
+                            <label><input type="radio" name="check_step_6-5" class="Q28S1" value="4"><span>总是</span></label>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <div class="skintest_btns">
+                    <a class="btn_prev" th:href="@{/skin/solution_01_5}">以前</a>
+                    <a class="btn_next" th:href="@{/skin/solution_01_7}">下次</a>
+                </div>
+
+                
+            </div>
+
+        </div>
+        <!-- //컨텐츠 -->
+
+    </section>
+    <!-- //Container -->
+
+</body>
+</html>

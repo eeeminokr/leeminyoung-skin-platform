@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!-- Default Layout Import-->
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/defaultLayout}"
+      th:with="type='skin'"
+>
+<body class="page_solution">
+
+
+    <section class="container" layout:fragment="Content">
+
+        <script th:inline="javascript">
+            const restoreAnswers = [[${answers}]];
+        </script>
+
+        <!-- 컨텐츠 상단 서브 메뉴 -->
+        <div class="lnb_wrap">
+            <div class="inner">
+                <div class="lnb">
+                    <button type="button">일반소비자 피부진단</button>
+                    <ul>
+                        <li class="active"><a th:href="@{/cosmetic/solution_01_1}">일반소비자 피부진단</a></li>
+                        <!-- <li><a class="last" th:href="@{/cosmetic/solution_02_1}">맞춤형화장품 조제관리사 고객 피부진단</a></li> -->
+                    </ul>
+                </div>
+
+                <ul class="depth_03">
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <!-- //컨텐츠 상단 서브 메뉴 -->
+
+        <!-- 타이틀 -->
+        <div class="title title_bg_03">
+            <div class="inner">
+                <div class="txtbox">
+                    <div class="tit_s ff_nm">My Skin Guide Platform</div>
+                    <h3 class="ff_nm">일반소비자 피부진단</h3>
+                    <p>소중한 내 피부, 타입을 체크해 보세요!<br />
+                        아름다운 피부 관리에 도움을 드리겠습니다.</p>
+                </div>
+            </div>
+        </div>
+        <!-- //타이틀 -->
+
+        <!-- 컨텐츠 -->
+        <div class="content kr" id="testTop">
+
+            <div class="inner">
+
+                <div class="language">
+                    <img width="20" height="20" th:src="@{/resources/static/images/common/ico_world.png}" alt="language" />
+                    <a class="active" href="?lang=KR">KR</a>
+                    <a href="?lang=CN">CN</a>
+                </div>
+
+                <ul class="skintest_step">
+                    <li><div><span class="step">STEP 1</span><span class="txt">피부 자가 진단</span></div></li>
+                    <li><div><span class="step">STEP 2</span><span class="txt">유/수분 밸런스</span></div></li>
+                    <li><div><span class="step">STEP 3</span><span class="txt">피부 트러블</span></div></li>
+                    <li><div><span class="step">STEP 4</span><span class="txt">색소침착</span></div></li>
+                    <li><div><span class="step">STEP 5</span><span class="txt">주름/탄력도</span></div></li>
+                    <li><div><span class="step">STEP 6</span><span class="txt">피부 노화</span></div></li>
+                    <li><div class="on"><span class="step">STEP 7</span><span class="txt">화장품 선호도</span></div></li>
+                    <li><div><span class="step">STEP 8</span><span class="txt">생활 패턴</span></div></li>
+                </ul>
+
+
+                <ul class="skintest_list">
+                    <li>
+                        <!-- Q29S7	Q29S2	Q29S8	Q29S4	Q29S1	Q29S6	Q29S9	Q29S5	Q29S3 -->
+                        <p><span class="num">1</span>화장품을 선택할 때 무엇을 가장 우선으로 생각하고 고르나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_7-1" class="Q29S7"><span>향</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S2"><span>사용감</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S8"><span>색깔</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S4"><span>광고성</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S1"><span>성분</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S6"><span>가격</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S9"><span>디자인</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S5"><span>브랜드</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S3"><span>느낌</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <!-- Q30S2	Q30S1	Q30S4	Q30S5	Q30S3 -->
+                        <p><span class="num">2</span>화장품 향의 선택기준은 무엇인가요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_7-2" class="Q30S2"><span>향 없음</span></label>
+                            <label><input type="radio" name="check_step_7-2" class="Q30S1"><span>약한 향</span></label>
+                            <label><input type="radio" name="check_step_7-2" class="Q30S4"><span>비누향</span></label>
+                            <label><input type="radio" name="check_step_7-2" class="Q30S5"><span>유아제품 향</span></label>
+                            <label><input type="radio" name="check_step_7-2" class="Q30S3"><span>향수처럼 개성 있는 느낌의 향</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <!-- Q31S1	Q31S2	Q31S3	Q31S5	Q31S4 -->
+                        <p><span class="num">3</span>화장품 바르는 느낌의 선택 기준은 무엇인가요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_7-3" class="Q31S1"><span>촉촉함</span></label>
+                            <label><input type="radio" name="check_step_7-3" class="Q31S2"><span>금방 흡수되는 느낌</span></label>
+                            <label><input type="radio" name="check_step_7-3" class="Q31S3"><span>보편적인 보통의 느낌</span></label>
+                            <label><input type="radio" name="check_step_7-3" class="Q31S5"><span>물기가 없고 부드러운 느낌</span></label>
+                            <label><input type="radio" name="check_step_7-3" class="Q31S4"><span>영양감</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <!-- Q32S4	Q32S1	Q32S2	Q32S3	Q32S5 -->
+                        <p><span class="num">4</span>화장품 물성(손으로 찍어보았을 때)의 선택 기준은 무엇인가요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_7-4" class="Q32S4"><span>묵직한 느낌</span></label>
+                            <label><input type="radio" name="check_step_7-4" class="Q32S1"><span>쫀쫀함</span></label>
+                            <label><input type="radio" name="check_step_7-4" class="Q32S2"><span>보편적인 보통의 느낌</span></label>
+                            <label><input type="radio" name="check_step_7-4" class="Q32S3"><span>가벼움</span></label>
+                            <label><input type="radio" name="check_step_7-4" class="Q32S5"><span>물처럼 매끄러운 타입</span></label>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <div class="skintest_btns">
+                    <a class="btn_prev" th:href="@{/skin/solution_01_6}">이전</a>
+                    <a class="btn_next" th:href="@{/skin/solution_01_8}">다음</a>
+                </div>
+
+                
+            </div>
+
+        </div>
+        <div class="content cn" id="testTop">
+
+            <div class="inner">
+
+                <div class="language">
+                    <img width="20" height="20" th:src="@{/resources/static/images/common/ico_world.png}" alt="language" />
+                    <a href="?lang=KR">KR</a>
+                    <a class="active" href="?lang=CN">CN</a>
+                </div>
+
+                <ul class="skintest_step">
+                    <li><div><span class="step">STEP 1</span><span class="txt">皮肤自己检测</span></div></li>
+                    <li><div><span class="step">STEP 2</span><span class="txt">油水分平衡</span></div></li>
+                    <li><div><span class="step">STEP 3</span><span class="txt">过敏，皮肤病</span></div></li>
+                    <li><div><span class="step">STEP 4</span><span class="txt">色素沉淀</span></div></li>
+                    <li><div><span class="step">STEP 5</span><span class="txt">皱纹/弹性</span></div></li>
+                    <li><div><span class="step">STEP 6</span><span class="txt">皮肤老化</span></div></li>
+                    <li><div class="on"><span class="step">STEP 7</span><span class="txt">化妆品偏爱度</span></div></li>
+                    <li><div><span class="step">STEP 8</span><span class="txt">生活方式</span></div></li>
+                </ul>
+
+
+                <ul class="skintest_list">
+                    <li>
+                        <p><span class="num">1</span>您选择化妆品时第一考虑 是什么？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_7-1" class="Q29S7"><span>香</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S2"><span>使用感</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S8"><span>颜色</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S4"><span>广告性</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S1"><span>成分</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S6"><span>价格</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S9"><span>设计</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S5"><span>牌子</span></label>
+                            <label><input type="radio" name="check_step_7-1" class="Q29S3"><span>感觉</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">2</span>如何化妆品的香味基准选择是什么？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_7-2" class="Q30S2"><span>没香味</span></label>
+                            <label><input type="radio" name="check_step_7-2" class="Q30S1"><span>一些香味</span></label>
+                            <label><input type="radio" name="check_step_7-2" class="Q30S4"><span>香皂香味</span></label>
+                            <label><input type="radio" name="check_step_7-2" class="Q30S5"><span>宝宝香味</span></label>
+                            <label><input type="radio" name="check_step_7-2" class="Q30S3"><span>像香水一样有个性的香味</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">3</span>如何涂抹化妆品感的基准选择是什么？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_7-3" class="Q31S1"><span>水润感</span></label>
+                            <label><input type="radio" name="check_step_7-3" class="Q31S2"><span>瞬间吸收感</span></label>
+                            <label><input type="radio" name="check_step_7-3" class="Q31S3"><span>普遍感</span></label>
+                            <label><input type="radio" name="check_step_7-3" class="Q31S5"><span>没水分，柔和感</span></label>
+                            <label><input type="radio" name="check_step_7-3" class="Q31S4"><span>营养感</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">4</span>（用手蘸）水溶性化妆品的基准选择是什么？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_7-4" class="Q32S4"><span>厚重感</span></label>
+                            <label><input type="radio" name="check_step_7-4" class="Q32S1"><span>紧致感</span></label>
+                            <label><input type="radio" name="check_step_7-4" class="Q32S2"><span>普遍感</span></label>
+                            <label><input type="radio" name="check_step_7-4" class="Q32S3"><span>轻松感</span></label>
+                            <label><input type="radio" name="check_step_7-4" class="Q32S5"><span>像水一样光滑感</span></label>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <div class="skintest_btns">
+                    <a class="btn_prev" th:href="@{/skin/solution_01_6}">以前</a>
+                    <a class="btn_next" th:href="@{/skin/solution_01_8}">下次</a>
+                </div>
+
+                
+            </div>
+
+        </div>
+        <!-- //컨텐츠 -->
+
+    </section>
+    <!-- //Container -->
+
+</body>
+</html>

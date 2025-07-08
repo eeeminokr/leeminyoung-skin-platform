@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/mobile/defaultLayout}"
+>
+<body class="page_business">
+
+        <!-- Container -->
+        <section class="container" layout:fragment="MobileContent">
+
+            <!-- 컨텐츠 상단 서브 메뉴 -->
+            <div class="lnb_wrap">
+                <div class="inner">
+                    <div class="lnb">
+                        <button type="button">기관소개</button>
+                        <ul>
+                            <li><a th:href="@{/business/business_01_1}">사업소개</a></li>
+                            <li class="active"><a th:href="@{/business/business_02_1}">기관소개</a>
+                                <ul>
+                                    <li class="active"><a th:href="@{/business/business_02_1}">제주테크노파크</a></li>
+                                    <li><a th:href="@{/business/business_02_2}">한국전자통신연구원</a></li>
+                                    <li><a th:href="@{/business/business_02_3}">제주대학교 산학협력단</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="last" th:href="@{/business/business_03_1}">맞춤형화장품 융복합 기술지원사업</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- //컨텐츠 상단 서브 메뉴 -->
+
+            <!-- 타이틀 -->
+            <div class="title title_bg_01">
+                <div class="inner">
+                    <div class="txtbox">
+                        <div class="tit_s ff_nm">My Skin Guide Platform</div>
+                        <h3 class="ff_nm">기관소개</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- //타이틀 -->
+
+            <!-- 서브페이지 3뎁스 영역 -->
+            <div class="lnb_depth" id="subTop">
+                <div class="swiper tabSwiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide active"><a th:href="@{/business/business_02_1}">제주테크노파크</a></li>
+                        <li class="swiper-slide"><a th:href="@{/business/business_02_2}">한국전자통신연구원</a></li>
+                        <li class="swiper-slide"><a th:href="@{/business/business_02_3}">제주대학교 산학협력단</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //서브페이지 3뎁스 영역 -->
+
+            <!-- 컨텐츠 -->
+            <div class="content jeju_park">
+
+                <div class="box1 mb_100">
+                    <div class="bg_img"></div>
+                    <div class="ff_nm">Organization <br />
+                        Introduction</div>
+                    <div class="bg_white ta_c">
+                        <h3 class="mb_30">센터 소개</h3>
+                        <p class="txt1">제주 바이오산업 육성의 핵심 허브로 제주 청정자원을 활용한 제품생산, 품질관리, 기술지원 등을 통하여 제주 바이오 기업을 적극 육성하고 있습니다.</p>
+                        <h3>센터 주요 역할</h3>
+                        <ul class="txt2">
+                            <li>
+                                <dl>
+                                    <dt>제주 바이오산업 거점 기관으로서의 위상확립</dt>
+                                    <dd>식품/화장품 산업 지역전략산업으로 집중육성</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>바이오 산업 인프라 확대 기여</dt>
+                                    <dd>창업보육실 42실, 식품/화장품/음료공장 구축 및 운영</dd>
+                                    <dd>KOLAS인증, ISO 22716, CGMP, 제주화장품인증기관 등</dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box2 mb_190">
+                    <div class="inner">
+                        <h3 class="ta_c">바이오융합센터 연혁</h3>
+                        <div class="box_scroll">
+                            <div class="history_wrap">
+                                <ul class="history_list">
+                                    <li class="y_2003">
+                                        <div class="year bg">2003</div>
+                                        <div class="txt dn">
+                                            <p>1단계 지역전략<br />산업진흥사업(5개년)</p>
+                                        </div>
+                                    </li>
+                                    <li class="y_2004">
+                                        <div class="year">2004</div>
+                                        <div class="txt dn2">
+                                            <p>바이오융합센터<br />1호관 준공(04.3)</p>
+                                        </div>
+                                    </li>
+                                    <li class="y_2005">
+                                        <div class="year">2005</div>
+                                        <div class="txt up2">
+                                            <p>제주화장품공장<br />준공(05.12)</p>
+                                        </div>
+                                    </li>
+                                    <li class="y_2006">
+                                        <div class="year">2006</div>
+                                    </li>
+                                    <li class="y_2007">
+                                        <div class="year">2007</div>
+                                        <div class="txt etc">
+                                            <span class="h_bar"></span>
+                                            <p>바이오융합센터<br />식품가공센터 준공(12.12)</p>
+                                            <p>2호관 준공(07.5)<br />-미국FDA등록(13.3)</p>
+                                        </div>
+                                    </li>
+                                    <li class="y_2008">
+                                        <div class="year bg">2008</div>
+                                        <div class="txt up">
+                                            <p>2단계 지역전략<br />산업진흥사업(5개년)</p>
+                                        </div>
+                                    </li>
+                                    <li class="y_2009">
+                                        <div class="year">2009</div>
+                                        <div class="txt up2">
+                                        <p>식품<br />GMP인증</p>  
+                                        </div>
+                                    </li>
+                                    <li class="y_2010">
+                                        <div class="year">2010</div>
+                                    </li>
+                                    <li class="y_2011">
+                                        <div class="year">2011</div>
+                                        <div class="txt up">
+                                            <p>품질관리지원동<br />증축 음료시설 구축</p>
+                                        </div>
+                                    </li>
+                                    <li class="y_2012">
+                                        <div class="year bg">2012</div>
+                                        <div class="txt up2">
+                                            <p>KOLAS<br />인증기관취득</p>
+                                        </div>
+                                        <div class="txt">
+                                            <p>신특화 사업(건강뷰티소재)<br />광역경제권선도사업(산업생태계)</p>
+                                        </div>
+                                    </li>
+                                    <li class="y_2013">
+                                        <div class="year">2013</div>
+                                    </li>
+                                    <li class="y_2014">
+                                        <div class="year bg">2014</div>
+                                        <div class="txt up">
+                                            <p>화장품<br />공장 직영</p>
+                                        </div>
+                                        <div class="txt dn2">
+                                            <p>주력산업 육성사업(청정헬스푸드)<br />경제협력사업(화장품뷰티)</p>
+                                        </div>
+                                    </li>
+                                    <li class="y_2015">
+                                        <div class="year">2015</div>
+                                        <div class="txt up2">
+                                        <p>CGMP 인증<br />ISO22716 인증</p> 
+                                        </div> 
+                                    </li>
+                                    <li class="y_2016">
+                                        <div class="year">2016</div>
+                                        <div class="txt dn2">
+                                            <p>유기 가공식품 인증취득(16.08)<br />KOLAS 갱신(16.12)</p>  
+                                        </div>
+                                    </li>
+                                    <li class="y_2017">
+                                        <div class="year">2017</div>
+                                    </li>
+                                    <li class="y_2018">
+                                        <div class="year">2018</div>
+                                        <div class="txt up2">
+                                            <p>CGMP<br />갱신</p>
+                                        </div>
+                                        <div class="txt up">
+                                            <p>시스템 산업거점<br />기관지원 사업(5개년)</p>  
+                                        </div>
+                                    </li>
+                                    <li class="y_2019">
+                                        <div class="year">2019</div>
+                                    </li>
+                                    <li class="y_2020">
+                                        <div class="year">2020</div>
+                                    </li>
+                                    <li class="y_2021">
+                                        <div class="year">2021</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box3 mb_190">
+                    <div class="inner">
+                        <h3 class="ta_c">비전 및 전략</h3>
+                        <div class="linebox">
+                            <h4 class="mb_20">비 전</h4>
+                            <p class="mb_110">산업생태계 고도화를 통한 지속 가능한 제주 바이오산업 육성</p>
+                            <h4>4대전략</h4>
+                            <ul class="order1 mb_130">
+                                <li>센터 경쟁력 강화</li>
+                                <li>기업지원 전문화</li>
+                                <li>인프라 고도화</li>
+                                <li>R&D 역량강화</li>
+                            </ul>
+                            <h4>조직구성</h4>
+                            <ul class="order2">
+                                <li>
+                                    <dl>
+                                        <dt>식품사업팀</dt>
+                                        <dd>식품분야 기술인력양성 및 마케팅 등 기술지원 관련 업무</dd>
+                                        <dd>센터 공장(식/음료 등) 및 공동연구실 운영관리</dd>
+                                        <dd>창업보육 및 입주기업관리</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>화장품사업팀</dt>
+                                        <dd>제주화장품공장운영(CGMP) 및 생산지원</dd>
+                                        <dd>제주화장품인증제도운영(전문기관 지정)</dd>
+                                        <dd>화장품원료센터운영</dd>
+                                        <dd>맞춤형화장품실증센터운영</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>품질관리팀</dt>
+                                        <dd>식품, 음료, 화장품 품질관리</dd>
+                                        <dd>공인시험기관(KOLAS) 운영</dd>
+                                        <dd>연구장비 운영 및 관리</dd>
+                                        <dd>화장품시험검사기관(준비중)</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box4 mb_190">
+                    <div class="inner">
+                        <h3 class="ta_c mb_60">핵심전략</h3>
+                        <div class="imgcap">
+                            <img class="mb_60" width="660" height="771" th:src="@{/resources/static/images/mobile/business/jejupark_img02.jpg}" alt="" />
+                        </div>
+                        <h4 class="tit"><span class="num">1</span>인프라 고도화</h4>
+                        <ul class="ul_number mb_80">
+                            <li><span class="num">1</span>제주청정자원 화장품 원료 산업화 지원센터 구축(천연화장품 산업 경쟁력 도모)</li>
+                            <li><span class="num">2</span>제주청정 기능성식품 스마트특성화 사업(기능성식품 제품 개발 및 생산 지원)</li>
+                            <li><span class="num">3</span>제주화장품인증제도 활성화를 통한 제주청정자원 가치 확대</li>
+                        </ul>
+                        <h4 class="tit"><span class="num">2</span>R&D 및 품질관리 역량강화</h4>
+                        <ul class="ul_number mb_80">
+                            <li><span class="num">1</span>소재 발굴부터 제품화 과정의 직접 지원을 통한 기업지원 내실화</li>
+                            <li><span class="num">2</span>기업 공동 기술개발 추진 및 기술이전(기능성원료 및 공정 개발 등)</li>
+                            <li><span class="num">3</span>화장품 시험검사기관 인증 획득을 위한 전문성 강화</li>
+                        </ul>
+                        <h4 class="tit"><span class="num">3</span>기업지원 전문화</h4>
+                        <ul class="ul_number">
+                            <li><span class="num">1</span>전문 기술 보유 인력 배치 및 운영</li>
+                            <li><span class="num">2</span>우수기업(기관) 네트워크 활성화</li>
+                            <li><span class="num">3</span>전문가 그룹 활용 방안 확대 운용</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box5"> 
+                    <div class="inner">
+                        <h3 class="ta_c">센터 인프라 소개</h3>
+                        <ul class="img_list">
+                            <li>
+                                <div class="img_block">
+                                    <img th:src="@{/resources/static/images/mobile/business/jejupark_img03.jpg}" alt="바이오융합센터 1호관 사진" />
+                                </div>
+                                <p class="txt1">바이오융합센터 1호관(건축면적 1,961㎡)</p>
+                                <p class="txt2">공동연구실, KOLAS실험실, cGMP제주화장품공장, 창업보육시설(R&D)등</p>
+                            </li>
+                            <li>
+                                <div class="img_block">
+                                    <img th:src="@{/resources/static/images/mobile/business/jejupark_img04.jpg}" alt="바이오융합센터 1호관 사진" />
+                                </div>
+                                <p class="txt1">바이오융합센터 1호관(건축면적 1,961㎡)</p>
+                                <p class="txt2">공동연구실, KOLAS실험실, cGMP제주화장품공장, 창업보육시설(R&D)등</p>
+                            </li>
+                            <li>
+                                <div class="img_block">
+                                    <img th:src="@{/resources/static/images/mobile/business/jejupark_img05.jpg}" alt="바이오융합센터 2호관 사진" />
+                                </div>
+                                <p class="txt1">바이오융합센터 2호관(건축면적 4,336㎡)</p>
+                                <p class="txt2">GMP식품공장, 유기가공 음료생산공장, 식품가공연구센터, 창업보육시설(제조업) 등</p>
+                            </li>
+                            <li>
+                                <div class="img_block">
+                                    <img th:src="@{/resources/static/images/mobile/business/jejupark_img06.jpg}" alt="바이오융합센터 2호관 사진" />
+                                </div>
+                                <p class="txt1">바이오융합센터 2호관(건축면적 4,336㎡)</p>
+                                <p class="txt2">GMP식품공장, 유기가공 음료생산공장, 식품가공연구센터, 창업보육시설(제조업) 등</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- //컨텐츠 -->
+
+        </section>
+        <!-- //Container -->
+</body>
+</html>

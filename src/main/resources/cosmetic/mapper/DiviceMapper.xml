@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="cosmetic.persistence.DeviceMapper">
+
+	<resultMap id="ChowisCompanyTypeC" type="cosmetic.domain.ChowisCompanyTypeC">
+		<result property ="customerId" column="customer_id"	/>
+		<result property ="moistureU" column="cndpskinmoisture_u"	/>
+		<result property ="moistureT" column="cndpskinmoisture_t"	/>
+		<result property ="sesitivity" column="sensitivityredness"	/>
+		<result property ="sebumU" column="cndpskinsebum_u"	/>
+		<result property ="sebumT" column="cndpskinsebum_t"	/>
+		<result property ="spots" column="spots"	/>
+		<result property ="wrinkles" column="wrinkles"	/>
+		<result property ="pores" column="pores"	/>
+		<result property ="keratin" column="keratin"	/>
+		<result property ="porphiryn" column="porphiryn"	/>
+		<result property ="gender" column="gender"	/>
+		<result property ="age" column="age"	/>
+	</resultMap>
+
+	<select id="selectAramHuvisTypeAById" parameterType="map" resultType="cosmetic.domain.AramHuvisTypeA">
+		SELECT 
+			A.ID,
+			A.EMAIL,
+			A.TRIAL,
+			A.HYDRATION,
+			A.PORE,
+			A.WRINKLE,
+			A.ACNE,
+			A.MELANIN,
+			A.HEMOGLOBIN,
+			A.SEBUM,
+			A.CREATEUSER,
+			A.CREATEDATE,
+			A.UPDATEUSER,
+			A.UPDATEDATE,
+			A.DEVICEID
+		FROM AramHuvisTypeA A 
+		WHERE 1=1
+		<if test="userId != null">
+			AND A.ID = #{userid} 
+		</if>
+        ORDER BY A.TRIAL DESC
+	</select>
+	
+	<insert id="insertAramHuvisTypeA" parameterType="cosmetic.domain.AramHuvisTypeA">
+		INSERT INTO AramHuvisTypeA(id, email, trial, hydration, pore, wrinkle, melanin, acne, hemoglobin, sebum,
+									createuser, createdate, updateuser, updatedate, DeviceId) 
+			VALUES(#{id}, #{email}, #{trial}, #{hydration}, #{pore}, #{wrinkle}, 
+			#{acne}, #{melanin}, #{hemoglobin}, #{sebum}, 'system', now(), null, null, #{deviceId})
+	</insert>
+
+
+	<select id="selectChowisCompanyTypcC" parameterType="map" resultMap="ChowisCompanyTypeC">
+		SELECT 
+			C.customer_id,
+			C.gender,
+			C.age,
+			A.cndpskinmoisture_u,
+			A.cndpskinmoisture_u, 
+			A.cndpskinmoisture_t,
+			A.sensitivityredness,
+			A.cndpskinsebum_u,  
+			A.cndpskinsebum_t,  
+			A.spots,  
+			A.wrinkles,  
+			A.pores,  
+			A.keratin,  
+			A.porphiryn
+		FROM ChowisCompanyTypeC_Customer C
+			LEFT JOIN ChowisCompanyTypeC_Analysis A
+			ON C.customer_id = A.customer_id 
+		
+		WHERE 1=1
+		<if test="userId != null">
+			AND U.ID = #{userId} 
+		</if>
+        
+	</select>
+
+
+	<insert id="insertDeviceInfo" parameterType="cosmetic.domain.DeviceInfo">
+		INSERT INTO DeviceInfo(DeviceId, ModelNo) VALUES(#{deviceId} , #{modelNo}); 
+	</insert>
+
+	<select id="selectDeviceInfo" parameterType="cosmetic.domain.DeviceInfo" resultType="cosmetic.domain.DeviceInfo">
+		SELECT *
+			FROM DeviceInfo
+		WHERE 1=1
+		<if test="deviceId != null">
+			AND DeviceId = #{deviceId}
+		</if>
+		<if test="modelNo != null">
+			AND ModelNo = #{modelNo}
+		</if>
+
+	</select>
+
+</mapper>
+

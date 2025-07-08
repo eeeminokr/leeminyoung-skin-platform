@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/mobile/defaultLayout}"
+      th:with="type='skin'"
+>
+
+<body class="page_solution">
+
+
+        <!-- Container -->
+        <section class="container" layout:fragment="MobileContent">
+ 
+            <script th:inline="javascript">
+                const restoreAnswers = [[${answers}]];
+            </script>
+
+            <!-- 컨텐츠 상단 서브 메뉴 -->
+            <div class="lnb_wrap">
+                <div class="inner">
+                    <div class="lnb">
+                        <button type="button">일반소비자 피부진단</button>
+                        <ul>
+                            <li class="active"><a class="last" href="@{/cosmetic/solution_01_1}">일반소비자 피부진단</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- //컨텐츠 상단 서브 메뉴 -->
+
+            <!-- 타이틀 -->
+            <div class="title title_bg_03">
+                <div class="inner">
+                    <div class="txtbox">
+                        <div class="tit_s ff_nm">My Skin Guide Platform</div>
+                        <h3 class="fs1 ff_nm">일반소비자 피부진단</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- //타이틀 -->
+
+            <!-- 서브페이지 3뎁스 영역 -->
+            <div class="lnb_depth" id="subTop">
+                <div class="swiper tabSwiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide active"><a href="@{/cosmetic/solution_01_1}">일반소비자 피부진단</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //서브페이지 3뎁스 영역 -->
+
+            <!-- 컨텐츠 -->
+            <div class="content kr" id="testTop">
+
+                <div class="skintest_step8 mt_80">
+                    <div class="inner">
+
+                        <ul class="skintest_step">
+                            <li><div><span class="step">STEP 1</span><span class="txt">피부 자가 진단</span></div></li>
+                            <li><div><span class="step">STEP 2</span><span class="txt">유/수분 밸런스</span></div></li>
+                            <li><div><span class="step">STEP 3</span><span class="txt">피부 트러블</span></div></li>
+                            <li><div><span class="step">STEP 4</span><span class="txt">색소침착</span></div></li>
+                            <li><div><span class="step">STEP 5</span><span class="txt">주름/탄력도</span></div></li>
+                            <li><div><span class="step">STEP 6</span><span class="txt">피부 노화</span></div></li>
+                            <li><div><span class="step">STEP 7</span><span class="txt">화장품 선호도</span></div></li>
+                            <li><div class="on"><span class="step">STEP 8</span><span class="txt">생활 패턴</span></div></li>
+                        </ul>
+
+                        <ul class="skintest_list">
+                            <li>
+                                <p><span class="num">1</span>기름진 음식, 단 음식을 자주 드시나요?</p>
+                                <div class="check_wrap inline">
+                                    <label><input type="radio" name="check_step_8-1" class="Q33S1" value="0"><span>매일</span></label>
+                                    <label><input type="radio" name="check_step_8-1" class="Q33S1" value="1"><span>자주</span></label>
+                                    <label><input type="radio" name="check_step_8-1" class="Q33S1" value="2"><span>종종</span></label>
+                                    <label><input type="radio" name="check_step_8-1" class="Q33S1" value="3"><span>가끔</span></label>
+                                    <label><input type="radio" name="check_step_8-1" class="Q33S1" value="4"><span>전혀 아니다</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">2</span>야외 활동 (운동, 태닝 등)을 자주 하시나요?</p>
+                                <div class="check_wrap inline">
+                                    <label><input type="radio" name="check_step_8-2" class="Q34S1" value="0"><span>거의안함</span></label>
+                                    <label><input type="radio" name="check_step_8-2" class="Q34S1" value="1"><span>주3회 이하</span></label>
+                                    <label><input type="radio" name="check_step_8-2" class="Q34S1" value="2"><span>주 4~5회</span></label>
+                                    <label><input type="radio" name="check_step_8-2" class="Q34S1" value="3"><span>매일</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">3</span>자외선 차단제를 항상 사용하시나요?</p>
+                                <div class="check_wrap inline">
+                                    <label><input type="radio" name="check_step_8-3" class="Q35S1" value="0"><span>거의안함</span></label>
+                                    <label><input type="radio" name="check_step_8-3" class="Q35S1" value="1"><span>주 3회 이하</span></label>
+                                    <label><input type="radio" name="check_step_8-3" class="Q35S1" value="2"><span>주 4회 이상</span></label>
+                                    <label><input type="radio" name="check_step_8-3" class="Q35S1" value="3"><span>매일</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">4</span>다이어트로 피부가 나빠지나요?</p>
+                                <div class="check_wrap inline">
+                                    <label><input type="radio" name="check_step_8-4" class="Q36S1" value="0"><span>전혀아니다</span></label>
+                                    <label><input type="radio" name="check_step_8-4" class="Q36S1" value="1"><span>아니다</span></label>
+                                    <label><input type="radio" name="check_step_8-4" class="Q36S1" value="2"><span>보통이다</span></label>
+                                    <label><input type="radio" name="check_step_8-4" class="Q36S1" value="3"><span>그렇다</span></label>
+                                    <label><input type="radio" name="check_step_8-4" class="Q36S1" value="4"><span>항상 그렇다</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">5</span>일주일에 어느정도 음주를 하시나요?</p>
+                                <div class="check_wrap">
+                                    <label><input type="radio" name="check_step_8-5" class="Q37S1" value="0"><span>전혀 마시지 않는다.</span></label>
+                                    <label><input type="radio" name="check_step_8-5" class="Q37S1" value="1"><span>소주 1병, 맥주 1캔 미만으로 마신다.</span></label>
+                                    <label><input type="radio" name="check_step_8-5" class="Q37S1" value="2"><span>소주 1병, 맥주 1캔 이상 마신다.</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">6</span>하루 흡연량은 얼마나 되시나요?</p>
+                                <div class="check_wrap">
+                                    <label><input type="radio" name="check_step_8-6" class="Q38S1" value="0"><span>전혀 피우지 않는다.</span></label>
+                                    <label><input type="radio" name="check_step_8-6" class="Q38S1" value="1"><span>반갑 미만으로 피운다.</span></label>
+                                    <label><input type="radio" name="check_step_8-6" class="Q38S1" value="2"><span>반갑에서 한갑 미만으로 피운다.</span></label>
+                                    <label><input type="radio" name="check_step_8-6" class="Q38S1" value="3"><span>1갑 이상 피운다.</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">7</span>스트레스를 얼마나 자주 받는 편인가요?</p>
+                                <div class="check_wrap inline">
+                                    <label><input type="radio" name="check_step_8-7" class="Q39S1" value="0"><span>항상</span></label>
+                                    <label><input type="radio" name="check_step_8-7" class="Q39S1" value="1"><span>자주</span></label>
+                                    <label><input type="radio" name="check_step_8-7" class="Q39S1" value="2"><span>보통</span></label>
+                                    <label><input type="radio" name="check_step_8-7" class="Q39S1" value="3"><span>가끔</span></label>
+                                    <label><input type="radio" name="check_step_8-7" class="Q39S1" value="4"><span>전혀아님</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">8</span>피부과 시술을 자주 받는 편인가요?</p>
+                                <div class="check_wrap inline">
+                                    <label><input type="radio" name="check_step_8-8" class="Q40S1" value="0"><span>항상</span></label>
+                                    <label><input type="radio" name="check_step_8-8" class="Q40S1" value="1"><span>자주</span></label>
+                                    <label><input type="radio" name="check_step_8-8" class="Q40S1" value="2"><span>보통</span></label>
+                                    <label><input type="radio" name="check_step_8-8" class="Q40S1" value="3"><span>가끔</span></label>
+                                    <label><input type="radio" name="check_step_8-8" class="Q40S1" value="4"><span>전혀아님</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">9</span>임신과 출산 경험이 있어요.</p>
+                                <div class="check_wrap inline">
+                                    <label><input type="radio" name="check_step_8-9" class="Q41S1"><span>없음</span></label>
+                                    <label><input type="radio" name="check_step_8-9" class="Q41S1"><span>있음</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">10</span>임신과 출산으로 피부가 나빠졌어요.</p>
+                                <div class="check_wrap inline">
+                                    <label><input type="radio" name="check_step_8-10" class="Q42S1" value="0"><span>해당 아님(경력 없음)</span></label>
+                                    <label><input type="radio" name="check_step_8-10" class="Q42S1" value="1"><span>전혀 아니다.</span></label>
+                                    <label><input type="radio" name="check_step_8-10" class="Q42S1" value="2"><span>심하지 않았다.</span></label>
+                                    <label><input type="radio" name="check_step_8-10" class="Q42S1" value="3"><span>약간 심했다.</span></label>
+                                    <label><input type="radio" name="check_step_8-10" class="Q42S1" value="4"><span>매우 심했다.</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">11</span>충분히 수면을 하시나요?</p>
+                                <div class="check_wrap">
+                                    <label><input type="radio" name="check_step_8-11" class="Q43S1" value="0"><span>매일 6시간 이하 수면</span></label>
+                                    <label><input type="radio" name="check_step_8-11" class="Q43S1" value="1"><span>주 2~3회 6시간 이상 수면</span></label>
+                                    <label><input type="radio" name="check_step_8-11" class="Q43S1" value="2"><span>주 4~5회 6시간 이상 수면</span></label>
+                                    <label><input type="radio" name="check_step_8-11" class="Q43S1" value="3"><span>주 6회 6시간 이상 수면</span></label>
+                                    <label><input type="radio" name="check_step_8-11" class="Q43S1" value="4"><span>매일 숙면을 취함</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">12</span>필링, 스크럽제로 각질 관리를 자주하시나요?</p>
+                                <div class="check_wrap inline">
+                                    <label><input type="radio" name="check_step_8-12" class="Q44S1" value="0"><span>거의 안함</span></label>
+                                    <label><input type="radio" name="check_step_8-12" class="Q44S1" value="1"><span>주 1회 이상</span></label>
+                                    <label><input type="radio" name="check_step_8-12" class="Q44S1" value="2"><span>주 2~3회</span></label>
+                                    <label><input type="radio" name="check_step_8-12" class="Q44S1" value="3"><span>주 3회 이상</span></label>
+                                    <label><input type="radio" name="check_step_8-12" class="Q44S1" value="4"><span>매일</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">13</span>손톱으로 긁으면 피부가 빨갛게 부풀어 오르나요?</p>
+                                <div class="check_wrap inline">
+                                    <label><input type="radio" name="check_step_8-13" class="Q45S1" value="0"><span>전혀 아니다</span></label>
+                                    <label><input type="radio" name="check_step_8-13" class="Q45S1" value="1"><span>아니다</span></label>
+                                    <label><input type="radio" name="check_step_8-13" class="Q45S1" value="2"><span>보통이다</span></label>
+                                    <label><input type="radio" name="check_step_8-13" class="Q45S1" value="3"><span>그렇다</span></label>
+                                    <label><input type="radio" name="check_step_8-13" class="Q45S1" value="4"><span>항상 그렇다</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">14</span>화장품을 바꾸면 트러블이 생기나요?</p>
+                                <div class="check_wrap inline">
+                                    <label><input type="radio" name="check_step_8-14" class="Q46S1" value="0"><span>전혀 아니다</span></label>
+                                    <label><input type="radio" name="check_step_8-14" class="Q46S1" value="1"><span>아니다</span></label>
+                                    <label><input type="radio" name="check_step_8-14" class="Q46S1" value="2"><span>보통이다</span></label>
+                                    <label><input type="radio" name="check_step_8-14" class="Q46S1" value="3"><span>그렇다</span></label>
+                                    <label><input type="radio" name="check_step_8-14" class="Q46S1" value="4"><span>항상 그렇다</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">15</span>T존(이마, 콧등), U존(턱주위) 중심으로 트러블이 자주 나시나요?</p>
+                                <div class="check_wrap inline">
+                                    <label><input type="radio" name="check_step_8-15" class="Q47S1" value="0"><span>전혀 아니다</span></label>
+                                    <label><input type="radio" name="check_step_8-15" class="Q47S1" value="1"><span>아니다</span></label>
+                                    <label><input type="radio" name="check_step_8-15" class="Q47S1" value="2"><span>보통이다</span></label>
+                                    <label><input type="radio" name="check_step_8-15" class="Q47S1" value="3"><span>그렇다</span></label>
+                                    <label><input type="radio" name="check_step_8-15" class="Q47S1" value="4"><span>항상 그렇다</span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="num">16</span>스트레스 받을 때 (생리 전후도 포함) 피부변화가 있나요? (트러블, 건조함 등)</p>
+                                <div class="check_wrap inline">
+                                    <label><input type="radio" name="check_step_8-16" class="Q48S1" value="0"><span>전혀 아니다</span></label>
+                                    <label><input type="radio" name="check_step_8-16" class="Q48S1" value="1"><span>아니다</span></label>
+                                    <label><input type="radio" name="check_step_8-16" class="Q48S1" value="2"><span>보통이다</span></label>
+                                    <label><input type="radio" name="check_step_8-16" class="Q48S1" value="3"><span>그렇다</span></label>
+                                    <label><input type="radio" name="check_step_8-16" class="Q48S1" value="4"><span>항상 그렇다</span></label>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="skintest_btns">
+                            <a class="btn_prev" th:href="@{/skin/solution_01_7}">이전</a>
+                            <a class="btn_next" th:href="@{/skin/solution_01_9}">결과보기</a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <!-- //컨텐츠 -->
+
+        </section>
+        <!-- //Container -->
+
+</body>
+</html>

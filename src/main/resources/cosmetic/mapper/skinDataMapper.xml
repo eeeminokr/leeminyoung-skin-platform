@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cosmetic.persistence.SkinDataMapper2019">
+    <!-- 피부정밀측정데이터 대상자 연령대별 인원수 통계 (1_맞춤형화장품과제_통합데이터_KJO_3000명P0006712.xlsx 파일) -->
+    <select id="getAgeBandSummaryOfSkinPrecisionMeasurementData" resultType="cosmetic.domain.SkinData_20191105">
+		select a.AgeBand, count(*) Count
+        from (
+            SELECT 
+                case 
+                    when Age &lt; 30 then 20
+                    when Age >= 30 and Age &lt; 40 then 30
+                    when Age >= 40 and Age &lt; 50 then 40
+                    when Age >= 50 and Age &lt; 60 then 50
+                    when Age >= 60 then 60
+                    else 0
+                end AgeBand,
+            W201, W202, W203, W204, W101, W102, W103, W104, A101, A102, A201, A202, M101, M102, R101, R201, R202, L101, L102, S101, S102, S103, S104 
+            FROM SkinData_20191105) a
+        group by a.AgeBand
+	</select>
+    <!-- 설문‧문진데이터 대상자 연령대별 인원수 통계 (1_맞춤형화장품과제_통합데이터_KJO_3000명P0006712.xlsx 파일) -->
+    <select id="getAgeBandSummaryOfInterviewData" resultType="cosmetic.domain.SkinData_20191105">
+		select a.AgeBand, count(*) Count
+        from (
+            SELECT 
+                case 
+                    when Age &lt; 30 then 20
+                    when Age >= 30 and Age &lt; 40 then 30
+                    when Age >= 40 and Age &lt; 50 then 40
+                    when Age >= 50 and Age &lt; 60 then 50
+                    when Age >= 60 then 60
+                    else 0
+                end AgeBand,
+                Q01S1, Q01S2, Q01S3, Q01S4, Q01S5, Q01S6, Q02S1, Q02S2, Q02S3, Q02S4, Q02S5, Q02S6, Q02S7, Q02S8, Q02S9, Q02S10, Q02S11, Q03S1, Q03S2, Q04S1, Q04S2, Q05S1, Q05S2, Q06S1, Q06S2, Q07S1, Q08S1, Q08S2, Q09S1, Q10S1, Q11S1, Q12S1, Q13S1, Q14S1, Q15S1, Q16S1, Q17S1, Q18S1, Q19S1, Q20S1, Q21S1, Q22S1, Q23S1, Q24S1, Q25S1, Q26S1, Q27S1, Q28S1, Q29S1, Q29S2, Q29S3, Q29S4, Q29S5, Q29S6, Q29S7, Q29S8, Q29S9, Q30S1, Q30S2, Q30S3, Q30S4, Q30S5, Q31S1, Q31S2, Q31S3, Q31S4, Q31S5, Q32S1, Q32S2, Q32S3, Q32S4, Q32S5, Q33S1, Q34S1, Q35S1, Q36S1, Q38S1, Q39S1, Q40S1, Q41S1, Q42S1, Q43S1, Q44S1, Q45S1, Q46S1, Q47S1, Q48S1
+            FROM SkinData_20191105) a
+        group by a.AgeBand
+	</select>
+    <!-- 유전자데이터 대상자 연령대별 인원수 통계 (1_맞춤형화장품과제_통합데이터_KJO_3000명P0006712.xlsx 파일) -->
+    <select id="getAgeBandSummaryOfGeneData" resultType="cosmetic.domain.SkinData_20191105">
+		select a.AgeBand, count(*) Count
+        from (
+            SELECT 
+                case 
+                    when Age &lt; 30 then 20
+                    when Age >= 30 and Age &lt; 40 then 30
+                    when Age >= 40 and Age &lt; 50 then 40
+                    when Age >= 50 and Age &lt; 60 then 50
+                    when Age >= 60 then 60
+                    else 0
+                end AgeBand,
+                rs117381658, rs1961184, rs1929013, rs7042102, rs9873353, rs34567709, rs1362404, rs7853290, rs143938096, rs12955989, rs74653330, rs34466224, rs11685354, rs4653497, rs59784607, rs76548385, rs308971, rs151209785, rs9577919, rs147804495, rs8107564, rs6490805, rs7334780, rs41308
+            FROM SkinData_20191105 where rs117381658 is not null) a
+        group by a.AgeBand
+	</select>
+
+</mapper>

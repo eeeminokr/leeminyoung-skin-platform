@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/mobile/defaultLayout}"
+      th:with="type='main'"
+>
+
+<body>
+        <!-- Container -->
+        <section class="container" layout:fragment="MobileContent">
+
+            <!-- 메인 비주얼 슬라이드 -->
+            <div class="main_visual swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <div class="bg bg1"></div>
+                        <div class="inner">
+                            <div class="txtbox">
+                                <span class="txt1 ff_nm">My Skin Guide Platform</span>
+                                <span class="txt2">맞춤형 화장품 분야 빅데이터</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="bg bg2"></div>
+                        <div class="inner">
+                            <div class="txtbox">
+                                <span class="txt1 ff_nm">My Skin Guide Platform</span>
+                                <span class="txt2">맞춤형 화장품 분야 빅데이터</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+            </div>
+            <!-- 메인 비주얼 슬라이드 -->
+
+            <div class="main main_sq">
+                <div class="inner">
+                    <div class="txtst">
+                        <h3 class="ff_nm">SkinQurator</h3>
+                        <p class="txt1">스킨 큐레이터</p>
+                        <p class="txt2">최상의 빅데이터 기반 맞춤형 <br />화장품 플랫폼 구축 개발을 <br />위해 최선을 다하겠습니다.</p>
+                        <a class="btn_round ff_nm" th:href="@{/cosmetic/cosmetic_03_1}">view<em class="arrow"></em></a>
+                    </div>  
+                </div>
+                <div class="imgst">
+                    <img width="750" height="776" th:src="@{/resources/static/images/mobile/main/img01.jpg}" alt="" />
+                </div>
+            </div>
+
+            <div class="main main_bm">
+                <div class="bg"></div>
+                <div class="txtbox">
+                    <div class="inner">
+                        <h3 class="ff_nm">General Consumer <br />
+                            Skin Diagnosis</h3>
+                        <p class="txt1">일반소비자 피부진단 서비스를 만나보세요!</p>
+                        <a class="btn ff_nm" th:href="@{/skin/solution_01_1}">view</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main main_sl">
+                <div class="inner top">
+                    <div class="txtst">
+                        <h3 class="ff_nm txt_s">SkinQurator <br />
+                            Business lntroduction</h3>
+                        <p class="txt1">스킨큐레이터 사업소개</p>
+                        <p class="txt2">데이터 활용 맞춤형화장품 <br />기반 조성으로 K-뷰티산업을 <br />선도 하겠습니다.</p>
+                        <a class="btn_round ff_nm" th:href="@{/business/business_01_1}">view<em class="arrow"></em></a>
+                    </div>
+                </div>
+                <div class="imgst">
+                    <img width="750" height="727" th:src="@{/resources/static/images/mobile/main/img03.jpg}" alt="" />
+                </div>
+
+                <div class="inner btm">
+                    <div class="txtst">
+                        <h3 class="ff_nm txt_s">SkinQurator <br />
+                            Jeju Techno Park</h3>
+                        <p class="txt1">스킨큐레이터 제주테크노파크</p>
+                        <p class="txt2">제주 바이오산업 육성의 핵심 <br />허브로 제주 청정자원을 <br />활용한 제품생산, 품질관리, <br />기술지원 등을 통하여 <br />제주 바이오 기업을 적극 <br />육성하고 있습니다.</p>
+                        <a class="btn_round ff_nm" th:href="@{/business/business_02_1}">view<em class="arrow"></em></a>
+                    </div>
+                </div>
+
+                <div class="imgst">
+                    <img width="750" height="766" th:src="@{/resources/static/images/mobile/main/img04.jpg}" alt="" />
+                </div>
+            </div>
+
+            <div class="main main_notice">
+                <!-- 메인 배너 슬라이드 -->
+                <div class="banner swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide" th:each="item : ${bannerItems}">
+                            <a th:href="@{|/community/community_01/${item.noticeUrlLink}|}">
+                                <div class="bg" th:utext="${item.contents}"></div>
+                            <div class="inner txtbox">
+                                <p class="txt1">2022 조제관리사를 위한 맞춤형 화장품 워크샵</p>
+                                <p class="txt2">피부 건강을 위한 맞춤형 화장품 서비스 <br />
+                                    플랫폼 개발을 위하여  워크숍을 개최합니다.</p>
+                            </div>
+                        </li>
+                        <!-- 추후 배너 추가하여 슬라이드 예정
+                        <li class="swiper-slide">
+                            <div class="bg bg2"></div>
+                            <div class="inner txtbox">
+                                <p class="txt1">2022 조제관리사를 위한 맞춤형 화장품 워크샵</p>
+                                <p class="txt2">피부 건강을 위한 맞춤형 화장품 서비스 <br />
+                                    플랫폼 개발을 위하여  워크숍을 개최합니다.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="bg bg3"></div>
+                            <div class="inner txtbox">
+                                <p class="txt1">2022 조제관리사를 위한 맞춤형 화장품 워크샵</p>
+                                <p class="txt2">피부 건강을 위한 맞춤형 화장품 서비스 <br />
+                                    플랫폼 개발을 위하여  워크숍을 개최합니다.</p>
+                            </div>
+                        </li> -->
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!-- //메인 배너 슬라이드 -->
+
+                <div class="inner">
+                    <div class="noti_list">
+                        <h3 class="ff_nm bar">Notice</h3>
+                        <a class="btn_more" th:href="@{/community/community_01}"><span class="blind">공지사항</span>더보기</a>
+                        <ul>
+                            <li th:each="item : ${noticeItems}">
+                                <a th:href="@{|/community/community_01/${item.boardItemId}|}" th:text="${item.title}"></a>
+                                <span class="date" th:text="${item.dateTimeUpdatedFormatted}"></span>
+                            </li>
+                            <!-- <li><a href="">2022년 조제관리사를 위한 맞춤형 화장품 워크숍 개최 안내</a><span class="date">2022-12-20</span></li>
+                            <li><a href="">2022 오송 화장품뷰티산업엑스포 참여기업 선정평가 결과 안내</a><span class="date">2022-12-20</span></li>
+                            <li><a href="">2022 InterCHRAM korea 박람회 참여기업 선정평가 결과 안내</a><span class="date">2022-12-20</span></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- //Container -->
+        
+
+</body>
+</html>

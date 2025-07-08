@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<!--Thymeleaf, ConfigFragment 선언-->
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+    <head th:fragment="MobileConfigFragment">
+        <!--Common Head-->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+        <meta name="format-detection" content="telephone=no" />
+        <title>SKIN QURATOR</title>
+        <link rel="shortcut icon"
+                th:href="@{/resources/static/images/mobile/common/favicon.ico}" />
+            <link rel="stylesheet" th:href="@{/resources/static/css/mobile/font.css}" />
+            <link rel="stylesheet" th:href="@{/resources/static/css/mobile/common.css}" />
+            <link rel="stylesheet" th:href="@{/resources/static/css/softm.css}" />
+            <link rel="stylesheet" th:href="@{/resources/static/css/mobile/style.css}" />
+            <!--payment 이니시스 js 임포트-->
+            <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+            <!-- jquery -->
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <!-- jquery-ui -->
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <!-- jquery-ui css -->
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        
+        <script th:inline="javascript">
+            const ctxPath = "[(${contextPath})]";
+            const activeProfile = "[(${activeProfile})]";
+        </script>
+        
+        <!--mobile common css & js-->
+        <script type="text/javascript" th:src="@{/resources/static/js/mobile/swiper.min.js}"> </script>
+        <link rel="stylesheet" th:href="@{/resources/static/css/mobile/swiper.min.css}" />
+        <script type="text/javascript" th:src="@{/resources/static/js/mobile/common.js}"> </script>
+        
+<!--            <script type="text/javascript" th:src="@{/resources/static/js/lib/jquery-3.6.1.min.js}"></script>-->
+<!--            <script type="text/javascript" th:src="@{/resources/static/js/lib/jquery-1.6.4.min.js}"></script>-->
+
+        <script type="text/javascript" charset="utf-8">
+            $(function() {	
+                for (let i = 0; i < 65; i++) {
+                    let key = sessionStorage.key(i);
+                    if (!window.location.pathname.includes('solution_01_2')) {
+                        sessionStorage.removeItem('check_step_'+i);
+                    }
+                }
+            });
+        </script>
+
+        <th:block th:if="${type == 'main'}">
+            <link rel="stylesheet" th:href="@{/resources/static/css/mobile/swiper.min.css}" />
+            <link rel="stylesheet" th:href="@{/resources/static/css/mobile/main.css}" />
+        </th:block>
+
+        <th:block th:if="${type == 'main'}">
+            <script type="text/javascript" th:src="@{/resources/static/js/mobile/main.js}"> </script>
+            <script type="text/javascript" th:src="@{/resources/static/js/mobile/swiper.min.js}"> </script>
+        </th:block>
+
+        <script type="text/javascript" th:src="@{/resources/static/js/softm.js}"> </script>
+
+        <th:block th:if="${type == 'skin-data-2019'}">
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+        </th:block>
+
+        <th:block th:if="${type == 'searchResult'}">
+            <script type="text/javascript" th:src="@{/resources/static/js/payment.js}"> </script>
+        </th:block>
+        <!-- type == 'searchResult' -->
+        <th:block th:if="${type == 'mobile/customResult' || type == 'mobile/searchResult' || type == 'mobile/skinResult' || type == 'searchResult' || type == 'diagnosisLastResult' || type == 'customResult' }">
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <script src="https://code.highcharts.com/highcharts-more.js"></script>
+            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+        </th:block>
+
+        <th:block th:if="${not #strings.isEmpty(type)}">
+            <script type="text/javascript" th:src="@{|/resources/static/js/${type}.js|}"> </script>
+        </th:block>
+
+
+    </head>
+</html>

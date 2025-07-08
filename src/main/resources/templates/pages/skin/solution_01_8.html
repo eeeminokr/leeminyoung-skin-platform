@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!-- Default Layout Import-->
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/defaultLayout}"
+      th:with="type='skin'"
+>
+<body class="page_solution">
+
+
+    <section class="container" layout:fragment="Content">
+
+        <script th:inline="javascript">
+            const restoreAnswers = [[${answers}]];
+        </script>
+
+        <!-- 컨텐츠 상단 서브 메뉴 -->
+        <div class="lnb_wrap">
+            <div class="inner">
+                <div class="lnb">
+                    <button type="button">일반소비자 피부진단</button>
+                    <ul>
+                        <li class="active"><a th:href="@{/skin/solution_01_1}">일반소비자 피부진단</a></li>
+                        <!-- <li><a class="last" th:href="@{/cosmetic/solution_02_1}">맞춤형화장품 조제관리사 고객 피부진단</a></li> -->
+                    </ul>
+                </div>
+
+                <ul class="depth_03">
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <!-- //컨텐츠 상단 서브 메뉴 -->
+
+        <!-- 타이틀 -->
+        <div class="title title_bg_03">
+            <div class="inner">
+                <div class="txtbox">
+                    <div class="tit_s ff_nm">My Skin Guide Platform</div>
+                    <h3 class="ff_nm">일반소비자 피부진단</h3>
+                    <p>소중한 내 피부, 타입을 체크해 보세요!<br />
+                        아름다운 피부 관리에 도움을 드리겠습니다.</p>
+                </div>
+            </div>
+        </div>
+        <!-- //타이틀 -->
+
+        <!-- 컨텐츠 -->
+        <div class="content kr" id="testTop">
+
+            <div class="inner">
+
+                <div class="language">
+                    <img width="20" height="20" th:src="@{/resources/static/images/common/ico_world.png}" alt="language" />
+                    <a class="active" href="?lang=KR">KR</a>
+                    <a href="?lang=CN">CN</a>
+                </div>
+
+                <ul class="skintest_step">
+                    <li><div><span class="step">STEP 1</span><span class="txt">피부 자가 진단</span></div></li>
+                    <li><div><span class="step">STEP 2</span><span class="txt">유/수분 밸런스</span></div></li>
+                    <li><div><span class="step">STEP 3</span><span class="txt">피부 트러블</span></div></li>
+                    <li><div><span class="step">STEP 4</span><span class="txt">색소침착</span></div></li>
+                    <li><div><span class="step">STEP 5</span><span class="txt">주름/탄력도</span></div></li>
+                    <li><div><span class="step">STEP 6</span><span class="txt">피부 노화</span></div></li>
+                    <li><div><span class="step">STEP 7</span><span class="txt">화장품 선호도</span></div></li>
+                    <li><div class="on"><span class="step">STEP 8</span><span class="txt">생활 패턴</span></div></li>
+                </ul>
+
+
+                <ul class="skintest_list">
+                    <!-- Q33S1	Q34S1	Q35S1	Q36S1	Q37S1	Q38S1	Q39S1	Q40S1	Q41S1	Q42S1	Q43S1	Q44S1	Q45S1	Q46S1	Q47S1	Q48S1 -->
+                    <li>
+                        <p><span class="num">1</span>기름진 음식, 단 음식을 자주 드시나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-1" class="Q33S1" value="0"><span>매일</span></label>
+                            <label><input type="radio" name="check_step_8-1" class="Q33S1" value="1"><span>자주</span></label>
+                            <label><input type="radio" name="check_step_8-1" class="Q33S1" value="2"><span>종종</span></label>
+                            <label><input type="radio" name="check_step_8-1" class="Q33S1" value="3"><span>가끔</span></label>
+                            <label><input type="radio" name="check_step_8-1" class="Q33S1" value="4"><span>전혀 아니다</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">2</span>야외 활동 (운동, 태닝 등)을 자주 하시나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-2" class="Q34S1" value="0"><span>거의안함</span></label>
+                            <label><input type="radio" name="check_step_8-2" class="Q34S1" value="1"><span>주3회 이하</span></label>
+                            <label><input type="radio" name="check_step_8-2" class="Q34S1" value="2"><span>주 4~5회</span></label>
+                            <label><input type="radio" name="check_step_8-2" class="Q34S1" value="3"><span>매일</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">3</span>자외선 차단제를 항상 사용하시나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-3" class="Q35S1" value="0"><span>거의안함</span></label>
+                            <label><input type="radio" name="check_step_8-3" class="Q35S1" value="1"><span>주 3회 이하</span></label>
+                            <label><input type="radio" name="check_step_8-3" class="Q35S1" value="2"><span>주 4회 이상</span></label>
+                            <label><input type="radio" name="check_step_8-3" class="Q35S1" value="3"><span>매일</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">4</span>다이어트로 피부가 나빠지나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-4" class="Q36S1" value="0"><span>전혀아니다</span></label>
+                            <label><input type="radio" name="check_step_8-4" class="Q36S1" value="1"><span>아니다</span></label>
+                            <label><input type="radio" name="check_step_8-4" class="Q36S1" value="2"><span>보통이다</span></label>
+                            <label><input type="radio" name="check_step_8-4" class="Q36S1" value="3"><span>그렇다</span></label>
+                            <label><input type="radio" name="check_step_8-4" class="Q36S1" value="4"><span>항상 그렇다</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">5</span>일주일에 어느정도 음주를 하시나요?</p>
+                        <div class="check_wrap">
+                            <label><input type="radio" name="check_step_8-5" class="Q37S1" value="0"><span>전혀 마시지 않는다.</span></label>
+                            <label><input type="radio" name="check_step_8-5" class="Q37S1" value="1"><span>소주 1병, 맥주 1캔 미만으로 마신다.</span></label>
+                            <label><input type="radio" name="check_step_8-5" class="Q37S1" value="2"><span>소주 1병, 맥주 1캔 이상 마신다.</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">6</span>하루 흡연량은 얼마나 되시나요?</p>
+                        <div class="check_wrap">
+                            <label><input type="radio" name="check_step_8-6" class="Q38S1" value="0"><span>전혀 피우지 않는다.</span></label>
+                            <label><input type="radio" name="check_step_8-6" class="Q38S1" value="1"><span>반갑 미만으로 피운다.</span></label>
+                            <label><input type="radio" name="check_step_8-6" class="Q38S1" value="2"><span>반갑에서 한갑 미만으로 피운다.</span></label>
+                            <label><input type="radio" name="check_step_8-6" class="Q38S1" value="3"><span>1갑 이상 피운다.</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">7</span>스트레스를 얼마나 자주 받는 편인가요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-7" class="Q39S1" value="0"><span>항상</span></label>
+                            <label><input type="radio" name="check_step_8-7" class="Q39S1" value="1"><span>자주</span></label>
+                            <label><input type="radio" name="check_step_8-7" class="Q39S1" value="2"><span>보통</span></label>
+                            <label><input type="radio" name="check_step_8-7" class="Q39S1" value="3"><span>가끔</span></label>
+                            <label><input type="radio" name="check_step_8-7" class="Q39S1" value="4"><span>전혀아님</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">8</span>피부과 시술을 자주 받는 편인가요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-8" class="Q40S1" value="0"><span>항상</span></label>
+                            <label><input type="radio" name="check_step_8-8" class="Q40S1" value="1"><span>자주</span></label>
+                            <label><input type="radio" name="check_step_8-8" class="Q40S1" value="2"><span>보통</span></label>
+                            <label><input type="radio" name="check_step_8-8" class="Q40S1" value="3"><span>가끔</span></label>
+                            <label><input type="radio" name="check_step_8-8" class="Q40S1" value="4"><span>전혀아님</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">9</span>임신과 출산 경험이 있어요.</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-9" class="Q41S1"><span>없음</span></label>
+                            <label><input type="radio" name="check_step_8-9" class="Q41S1"><span>있음</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">10</span>임신과 출산으로 피부가 나빠졌어요.</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-10" class="Q42S1" value="0"><span>해당 아님(경력 없음)</span></label>
+                            <label><input type="radio" name="check_step_8-10" class="Q42S1" value="1"><span>전혀 아니다.</span></label>
+                            <label><input type="radio" name="check_step_8-10" class="Q42S1" value="2"><span>심하지 않았다.</span></label>
+                            <label><input type="radio" name="check_step_8-10" class="Q42S1" value="3"><span>약간 심했다.</span></label>
+                            <label><input type="radio" name="check_step_8-10" class="Q42S1" value="4"><span>매우 심했다.</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">11</span>충분히 수면을 하시나요?</p>
+                        <div class="check_wrap">
+                            <label><input type="radio" name="check_step_8-11" class="Q43S1" value="0"><span>매일 6시간 이하 수면</span></label>
+                            <label><input type="radio" name="check_step_8-11" class="Q43S1" value="1"><span>주 2~3회 6시간 이상 수면</span></label>
+                            <label><input type="radio" name="check_step_8-11" class="Q43S1" value="2"><span>주 4~5회 6시간 이상 수면</span></label>
+                            <label><input type="radio" name="check_step_8-11" class="Q43S1" value="3"><span>주 6회 6시간 이상 수면</span></label>
+                            <label><input type="radio" name="check_step_8-11" class="Q43S1" value="4"><span>매일 숙면을 취함</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">12</span>필링, 스크럽제로 각질 관리를 자주하시나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-12" class="Q44S1" value="0"><span>거의 안함</span></label>
+                            <label><input type="radio" name="check_step_8-12" class="Q44S1" value="1"><span>주 1회 이상</span></label>
+                            <label><input type="radio" name="check_step_8-12" class="Q44S1" value="2"><span>주 2~3회</span></label>
+                            <label><input type="radio" name="check_step_8-12" class="Q44S1" value="3"><span>주 3회 이상</span></label>
+                            <label><input type="radio" name="check_step_8-12" class="Q44S1" value="4"><span>매일</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">13</span>손톱으로 긁으면 피부가 빨갛게 부풀어 오르나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-13" class="Q45S1" value="0"><span>전혀 아니다</span></label>
+                            <label><input type="radio" name="check_step_8-13" class="Q45S1" value="1"><span>아니다</span></label>
+                            <label><input type="radio" name="check_step_8-13" class="Q45S1" value="2"><span>보통이다</span></label>
+                            <label><input type="radio" name="check_step_8-13" class="Q45S1" value="3"><span>그렇다</span></label>
+                            <label><input type="radio" name="check_step_8-13" class="Q45S1" value="4"><span>항상 그렇다</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">14</span>화장품을 바꾸면 트러블이 생기나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-14" class="Q46S1" value="0"><span>전혀 아니다</span></label>
+                            <label><input type="radio" name="check_step_8-14" class="Q46S1" value="1"><span>아니다</span></label>
+                            <label><input type="radio" name="check_step_8-14" class="Q46S1" value="2"><span>보통이다</span></label>
+                            <label><input type="radio" name="check_step_8-14" class="Q46S1" value="3"><span>그렇다</span></label>
+                            <label><input type="radio" name="check_step_8-14" class="Q46S1" value="4"><span>항상 그렇다</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">15</span>T존(이마, 콧등), U존(턱주위) 중심으로 트러블이 자주 나시나요?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-15" class="Q47S1" value="0"><span>전혀 아니다</span></label>
+                            <label><input type="radio" name="check_step_8-15" class="Q47S1" value="1"><span>아니다</span></label>
+                            <label><input type="radio" name="check_step_8-15" class="Q47S1" value="2"><span>보통이다</span></label>
+                            <label><input type="radio" name="check_step_8-15" class="Q47S1" value="3"><span>그렇다</span></label>
+                            <label><input type="radio" name="check_step_8-15" class="Q47S1" value="4"><span>항상 그렇다</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">16</span>스트레스 받을 때 (생리 전후도 포함) 피부변화가 있나요? (트러블, 건조함 등)</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-16" class="Q48S1" value="0"><span>전혀 아니다</span></label>
+                            <label><input type="radio" name="check_step_8-16" class="Q48S1" value="1"><span>아니다</span></label>
+                            <label><input type="radio" name="check_step_8-16" class="Q48S1" value="2"><span>보통이다</span></label>
+                            <label><input type="radio" name="check_step_8-16" class="Q48S1" value="3"><span>그렇다</span></label>
+                            <label><input type="radio" name="check_step_8-16" class="Q48S1" value="4"><span>항상 그렇다</span></label>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <div class="skintest_btns">
+                    <a class="btn_prev" th:href="@{/skin/solution_01_7}">이전</a>
+                    <a class="btn_next" th:href="@{/skin/solution_01_9}">결과보기</a>
+                </div>
+
+                
+            </div>
+
+        </div>
+        <div class="content cn" id="testTop">
+
+            <div class="inner">
+
+                <div class="language">
+                    <img width="20" height="20" th:src="@{/resources/static/images/common/ico_world.png}" alt="language" />
+                    <a href="?lang=KR">KR</a>
+                    <a class="active" href="?lang=CN">CN</a>
+                </div>
+
+                <ul class="skintest_step">
+                    <li><div><span class="step">STEP 1</span><span class="txt">皮肤自己检测</span></div></li>
+                    <li><div><span class="step">STEP 2</span><span class="txt">油水分平衡</span></div></li>
+                    <li><div><span class="step">STEP 3</span><span class="txt">过敏，皮肤病</span></div></li>
+                    <li><div><span class="step">STEP 4</span><span class="txt">色素沉淀</span></div></li>
+                    <li><div><span class="step">STEP 5</span><span class="txt">皱纹/弹性</span></div></li>
+                    <li><div><span class="step">STEP 6</span><span class="txt">皮肤老化</span></div></li>
+                    <li><div><span class="step">STEP 7</span><span class="txt">化妆品偏爱度</span></div></li>
+                    <li><div class="on"><span class="step">STEP 8</span><span class="txt">生活方式</span></div></li>
+                </ul>
+
+
+                <ul class="skintest_list">
+                    <li>
+                        <p><span class="num">1</span>你常常吃油腻食物， 甜食物吗？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-1" class="Q33S1" value="0"><span>总是</span></label>
+                            <label><input type="radio" name="check_step_8-1" class="Q33S1" value="1"><span>常常</span></label>
+                            <label><input type="radio" name="check_step_8-1" class="Q33S1" value="2"><span>不常</span></label>
+                            <label><input type="radio" name="check_step_8-1" class="Q33S1" value="3"><span>偶尔</span></label>
+                            <label><input type="radio" name="check_step_8-1" class="Q33S1" value="4"><span>从不</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">2</span>你常常做野外活动（运动，美黑）吗？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-2" class="Q34S1" value="0"><span>几乎没做</span></label>
+                            <label><input type="radio" name="check_step_8-2" class="Q34S1" value="1"><span>周3次一下</span></label>
+                            <label><input type="radio" name="check_step_8-2" class="Q34S1" value="2"><span>周4~5次</span></label>
+                            <label><input type="radio" name="check_step_8-2" class="Q34S1" value="3"><span>每天</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">3</span>你每天用防晒霜吗？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-3" class="Q35S1" value="0"><span>几乎没用</span></label>
+                            <label><input type="radio" name="check_step_8-3" class="Q35S1" value="1"><span>一周3次一下</span></label>
+                            <label><input type="radio" name="check_step_8-3" class="Q35S1" value="2"><span>一周4次以上</span></label>
+                            <label><input type="radio" name="check_step_8-3" class="Q35S1" value="3"><span>每天</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">4</span>减肥时你的皮肤变不好吗？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-4" class="Q36S1" value="0"><span>从不</span></label>
+                            <label><input type="radio" name="check_step_8-4" class="Q36S1" value="1"><span>不是</span></label>
+                            <label><input type="radio" name="check_step_8-4" class="Q36S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_8-4" class="Q36S1" value="3"><span>是</span></label>
+                            <label><input type="radio" name="check_step_8-4" class="Q36S1" value="4"><span>总是</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">5</span>一周您喝多少酒？</p>
+                        <div class="check_wrap">
+                            <label><input type="radio" name="check_step_8-5" class="Q37S1" value="0"><span>从不喝酒</span></label>
+                            <label><input type="radio" name="check_step_8-5" class="Q37S1" value="1"><span>喝一瓶烧酒, 一罐啤酒内.</span></label>
+                            <label><input type="radio" name="check_step_8-5" class="Q37S1" value="2"><span>喝一瓶烧酒, 一罐啤酒以上</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">6</span>您一天吸烟量是多少？</p>
+                        <div class="check_wrap">
+                            <label><input type="radio" name="check_step_8-6" class="Q38S1" value="0"><span>从不吸烟</span></label>
+                            <label><input type="radio" name="check_step_8-6" class="Q38S1" value="1"><span>半盒内吸烟</span></label>
+                            <label><input type="radio" name="check_step_8-6" class="Q38S1" value="2"><span>半盒~一盒内吸烟</span></label>
+                            <label><input type="radio" name="check_step_8-6" class="Q38S1" value="3"><span>一盒以上吸烟</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">7</span>你常常受到压力多少遍？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-7" class="Q39S1" value="0"><span>总是</span></label>
+                            <label><input type="radio" name="check_step_8-7" class="Q39S1" value="1"><span>常常</span></label>
+                            <label><input type="radio" name="check_step_8-7" class="Q39S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_8-7" class="Q39S1" value="3"><span>偶尔</span></label>
+                            <label><input type="radio" name="check_step_8-7" class="Q39S1" value="4"><span>从不</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">8</span>你常常做皮肤科手术吗？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-8" class="Q40S1" value="0"><span>总是</span></label>
+                            <label><input type="radio" name="check_step_8-8" class="Q40S1" value="1"><span>常常</span></label>
+                            <label><input type="radio" name="check_step_8-8" class="Q40S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_8-8" class="Q40S1" value="3"><span>偶尔</span></label>
+                            <label><input type="radio" name="check_step_8-8" class="Q40S1" value="4"><span>从不</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">9</span>有怀孕和生育的经验。</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-9" class="Q41S1"><span>没有</span></label>
+                            <label><input type="radio" name="check_step_8-9" class="Q41S1"><span>有</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">10</span>因怀孕和生育就皮肤变不好了</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-10" class="Q42S1" value="0"><span>没经验</span></label>
+                            <label><input type="radio" name="check_step_8-10" class="Q42S1" value="1"><span>从不</span></label>
+                            <label><input type="radio" name="check_step_8-10" class="Q42S1" value="2"><span>不严重</span></label>
+                            <label><input type="radio" name="check_step_8-10" class="Q42S1" value="3"><span>有一些严重</span></label>
+                            <label><input type="radio" name="check_step_8-10" class="Q42S1" value="4"><span>很严重</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">11</span>你平时充分的睡觉吗？</p>
+                        <div class="check_wrap">
+                            <label><input type="radio" name="check_step_8-11" class="Q43S1" value="0"><span>每天6个小时一下睡眠</span></label>
+                            <label><input type="radio" name="check_step_8-11" class="Q43S1" value="1"><span>每周2~3次 6个小时以上睡眠</span></label>
+                            <label><input type="radio" name="check_step_8-11" class="Q43S1" value="2"><span>每周4~5次 6个小时以上睡眠</span></label>
+                            <label><input type="radio" name="check_step_8-11" class="Q43S1" value="3"><span>每周6次 6个小时以上睡眠</span></label>
+                            <label><input type="radio" name="check_step_8-11" class="Q43S1" value="4"><span>每天睡眠</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">12</span>使用去死皮，去角质，你常常角质管理吗？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-12" class="Q44S1" value="0"><span>几乎不做</span></label>
+                            <label><input type="radio" name="check_step_8-12" class="Q44S1" value="1"><span>每周一次以上</span></label>
+                            <label><input type="radio" name="check_step_8-12" class="Q44S1" value="2"><span>每周两三次</span></label>
+                            <label><input type="radio" name="check_step_8-12" class="Q44S1" value="3"><span>每周三次以上</span></label>
+                            <label><input type="radio" name="check_step_8-12" class="Q44S1" value="4"><span>每天</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">13</span>用指甲直接刺激皮肤红肿吗?</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-13" class="Q45S1" value="0"><span>从不</span></label>
+                            <label><input type="radio" name="check_step_8-13" class="Q45S1" value="1"><span>不是</span></label>
+                            <label><input type="radio" name="check_step_8-13" class="Q45S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_8-13" class="Q45S1" value="3"><span>是</span></label>
+                            <label><input type="radio" name="check_step_8-13" class="Q45S1" value="4"><span>总是</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">14</span>换化妆品的话你会长痘痘吗？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-14" class="Q46S1" value="0"><span>完全不是</span></label>
+                            <label><input type="radio" name="check_step_8-14" class="Q46S1" value="1"><span>不是</span></label>
+                            <label><input type="radio" name="check_step_8-14" class="Q46S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_8-14" class="Q46S1" value="3"><span>是</span></label>
+                            <label><input type="radio" name="check_step_8-14" class="Q46S1" value="4"><span>总是</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">15</span>T形区域（额头，鼻）U形区城（下巴）部位经常长痘痘吗？</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-15" class="Q47S1" value="0"><span>完全不是</span></label>
+                            <label><input type="radio" name="check_step_8-15" class="Q47S1" value="1"><span>不是</span></label>
+                            <label><input type="radio" name="check_step_8-15" class="Q47S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_8-15" class="Q47S1" value="3"><span>是</span></label>
+                            <label><input type="radio" name="check_step_8-15" class="Q47S1" value="4"><span>总是</span></label>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span class="num">16</span>受到压力时（包括月经前后）有没有皮肤变化？（长痘痘，干燥等）</p>
+                        <div class="check_wrap inline">
+                            <label><input type="radio" name="check_step_8-16" class="Q48S1" value="0"><span>从不</span></label>
+                            <label><input type="radio" name="check_step_8-16" class="Q48S1" value="1"><span>不是</span></label>
+                            <label><input type="radio" name="check_step_8-16" class="Q48S1" value="2"><span>一般</span></label>
+                            <label><input type="radio" name="check_step_8-16" class="Q48S1" value="3"><span>是</span></label>
+                            <label><input type="radio" name="check_step_8-16" class="Q48S1" value="4"><span>总是</span></label>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <div class="skintest_btns">
+                    <a class="btn_prev" th:href="@{/skin/solution_01_7}">以前</a>
+                    <a class="btn_next" th:href="@{/skin/solution_01_9}">看结果</a>
+                </div>
+
+                
+            </div>
+
+        </div>
+        <!-- //컨텐츠 -->
+
+    </section>
+    <!-- //Container -->
+
+</body>
+</html>

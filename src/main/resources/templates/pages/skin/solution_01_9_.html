@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- Default Layout Import-->
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/defaultLayout}"
+      th:with="type='skinResult'"
+>
+<body class="page_solution">
+<!-- searchResult seq에러 부분은 pc웹 skinresult chart 정상출력이후 진행-->
+
+<section class="container" layout:fragment="Content">
+
+    <script th:inline="javascript">
+        const restoreAnswers = [[${answers}]];
+    </script>
+
+    <!-- 컨텐츠 상단 서브 메뉴 -->
+    <div class="lnb_wrap">
+        <div class="inner">
+            <div class="lnb">
+                <button type="button">일반소비자 피부진단</button>
+                <ul>
+                    <li class="active"><a class="last" th:href="@{/skin/solution_01_1}">>일반소비자 피부진단</a></li>
+                </ul>
+            </div>
+
+            <ul class="depth_03">
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <!-- //컨텐츠 상단 서브 메뉴 -->
+
+    <!-- 타이틀 -->
+    <div class="title title_bg_03">
+        <div class="inner">
+            <div class="txtbox">
+                <div class="tit_s ff_nm">My Skin Guide Platform</div>
+                <h3 class="ff_nm">일반소비자 피부진단</h3>
+                <p>소중한 내 피부, 타입을 체크해 보세요!<br />
+                    아름다운 피부 관리에 도움을 드리겠습니다.</p>
+            </div>
+        </div>
+    </div>
+    <!-- //타이틀 -->
+
+    <!-- 컨텐츠 -->
+    <div class="content">
+
+        <div class="inner">
+
+            <h2 class="ff_nm bar">피부진단 결과</h2>
+
+            <div class="report_box">
+                <h3 class="ta_c">피부진단 분석 Report</h3>
+
+                <ul class="report_info mb_60">
+                    <li>
+                        <div class="fl"><span class="userName">고객명</span><!--김현지--></div>
+                        <div class="fr"><span class="cDate">진단일자</span><!--2023.11.15--></div>
+                    </li>
+                    <li>
+                        <div class="fl"><span>진단방법</span>피부진단</div>
+                    </li>
+                </ul>
+
+                <div class="report_result1 mb_60">
+                    <table class="tbl_st3">
+                        <colgroup>
+                            <col width="176px" />
+                            <col width="128px" />
+                            <col width="128px" />
+                            <col width="128px" />
+                            <col width="128px" />
+                            <col width="128px" />
+                            <col width="128px" />
+                            <col width="128px" />
+                            <col width="128px" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>항목</th>
+                                <th colspan="2">주름</th>
+                                <th colspan="2">미백</th>
+                                <th colspan="2">수분</th>
+                                <th>유분</th>
+                                <th rowspan="2" class="border_bt_none">민감</th>
+                            </tr>
+                            <tr>
+                                <th class="border_bt_none">진단부위</th>
+                                <th class="border_bt_none">눈가</th>
+                                <th class="border_bt_none">미간</th>
+                                <th class="border_bt_none"><span>색소<br />침착부위</span></th>
+                                <th class="border_bt_none"><span>비색소<br />침착부위</span></th>
+                                <th class="border_bt_none">볼</th>
+                                <th class="border_bt_none">미간</th>
+                                <th class="border_bt_none border_r_th">미간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>진단수치</td>
+                                <td>00</td>
+                                <td>00</td>
+                                <td>00</td>
+                                <td>00</td>
+                                <td>00</td>
+                                <td>00</td>
+                                <td>00</td>
+                                <td>00</td>
+                            </tr>
+                            <tr>
+                                <td>위험도</td>
+                                <td colspan="2">낮음</td>
+                                <td colspan="2">높음</td>
+                                <td colspan="2">중간</td>
+                                <td>높음</td>
+                                <td>높음</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="report_result2 mb_60">
+                    <table class="tbl_st4">
+                        <colgroup>
+                            <col width="193px" />
+                            <col width="153px" />
+                            <col width="854px" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>피부타입</th>
+                                <td class="bg">중지성</td>
+                                <td class="ta_l">중성 피부는 계절이나 나이에 맞는 화장품을 사용하고 수분, 유분의 밸런스를 맞추는 등 <br />규칙적인 관리를 해주세요!</td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2" class="border_bt_td">피부고민</th>
+                                <td class="bg">미백</td>
+                                <td class="ta_l">중성 피부는 계절이나 나이에 맞는 화장품을 사용하고 수분, 유분의 밸런스를 맞추는 등 <br />규칙적인 관리를 해주세요!</td>
+                            </tr>
+                            <tr>
+                                <td class="bg">민감</td>
+                                <td class="ta_l">중성 피부는 계절이나 나이에 맞는 화장품을 사용하고 수분, 유분의 밸런스를 맞추는 등 <br />규칙적인 관리를 해주세요!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="recommend">
+                    <table class="tbl_st3">
+                        <colgroup>
+                            <col width="240px" />
+                            <col width="255px" />
+                            <col width="705px" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="3" class="border_bt_none">추천제품</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border_r_none p_img"><img width="240" height="240"
+                                                                     th:src="@{/resources/static/images/solution/product_img.jpg}"
+                                                                     alt="" /></td>
+                                <td class="boder_r_none p_name">더테라피 블렌딩 에센스</td>
+                                <td class="p_info">
+                                    <ul class="ul_product">
+                                        <li>
+                                            <span class="txt">업체명</span>
+                                            <p>㈜엘지생활건강</p>
+                                        </li>
+                                        <li>
+                                            <span class="txt">전성분</span>
+                                            <p>정제수, 글리세린, 부틸렌글라이콜, 프로판다이올, 베타인, 카프릴릭 트라이글리세라이드, 1,2-헥산다이올, 판테놀, 에델바이스꽃/잎추출물, 부들레야추출물, 타임추출물, 아보카도오일, 올리브오일, 포트마리골드</p>
+                                        </li>
+                                        <li>
+                                            <span class="txt">효능</span>
+                                            <p>피부 속에서 시작되는 초기 노화부터 미리 관리하는 얼리 안티에이징으로 건강하고 탄력있는 피부로 만들어 줍니다.</p>
+                                        </li>
+                                        <li>
+                                            <span class="txt">구매링크</span>
+                                            <p><a href="https://www.naturecollection.com/" target="_blank" title="새창열기">https://www.naturecollection.com/</a></p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border_r_none p_img"><img width="240" height="240"
+                                                                     th:src="@{/resources/static/images/solution/product_img.jpg}"
+                                                                     alt="" /></td>
+                                <td class="border_r_none p_name">더테라피 블렌딩 에센스</td>
+                                <td class="p_info">
+                                    <ul class="ul_product">
+                                        <li>
+                                            <span class="txt">업체명</span>
+                                            <p>㈜엘지생활건강</p>
+                                        </li>
+                                        <li>
+                                            <span class="txt">전성분</span>
+                                            <p>정제수, 글리세린, 부틸렌글라이콜, 프로판다이올, 베타인, 카프릴릭 트라이글리세라이드, 1,2-헥산다이올, 판테놀, 에델바이스꽃/잎추출물, 부들레야추출물, 타임추출물, 아보카도오일, 올리브오일, 포트마리골드</p>
+                                        </li>
+                                        <li>
+                                            <span class="txt">효능</span>
+                                            <p>피부 속에서 시작되는 초기 노화부터 미리 관리하는 얼리 안티에이징으로 건강하고 탄력있는 피부로 만들어 줍니다.</p>
+                                        </li>
+                                        <li>
+                                            <span class="txt">구매링크</span>
+                                            <p><a href="https://www.naturecollection.com/" target="_blank" title="새창열기">https://www.naturecollection.com/</a></p>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div><!--//.report_box-->
+
+        </div>
+
+    </div>
+    <!-- //컨텐츠 -->
+
+</section>
+<!-- //Container -->
+
+</body>
+</html>
